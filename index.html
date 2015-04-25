@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Introduction – Accessibility &amp; Multi-Screen Design</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=680, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="styles/screen.css">
+</head>
+<body class="list">
+	<!--
+		Debug class on <body> enables
+		cyan grid on slides
+		-->
+	<header class="caption">
+		<h1>Accessibility &amp; Multi-Screen Design <br><strong>Introduction</strong></h1>
+		<p><a href="http://yatil.net">Eric Eggert</a>, outline</p>
+	</header>
+	<section class="slide shout"><div>
+		<h2 class="small">Accessibility &amp;<br> Multi-Screen Design <strong class="section">Introduction</strong></h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Eric Eggert</h2>
+		<ul>
+			<li>Web Developer & Trainer</li>
+			<li>2005–2010 Freelancer</li>
+			<li>2011+ Co-Founder @ outline</li>
+			<li>2013+ Web Accessibility Specialist @ W3C/WAI</li>
+		</ul>
+	</div></section>
+	<section class="slide cover w h" style="background-color: #fff;"><div>
+		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 width="100%" height="100%" viewBox="0 0 456 134">
+  <title>W3C</title>
+  <style type="text/css"><![CDATA[
+     .w3c_light {
+       fill: #0067B1;
+     }
+
+     .w3c_dark {
+       fill: #010101;
+     }
+
+     .lighter {
+       fill: #00A4E4;
+     }
+
+     .darker {
+       fill: #06357A;
+     }
+
+     .darkest, #divider {
+       fill: #000000;
+     }
+
+  ]]></style>
+
+  <g id="Logo">
+
+  	<g id="W3C_logo">
+  		<path class="w3c_light" d="M57.389,1.619l19.579,66.569L96.548,1.619h14.178h38.91v6.616l-19.985,34.433
+  			c7.02,2.254,12.334,6.351,15.934,12.293s5.402,12.917,5.402,20.926c0,9.909-2.636,18.234-7.898,24.987
+  			c-5.271,6.75-12.087,10.122-20.461,10.122c-6.301,0-11.793-2.004-16.473-6.01c-4.683-4.002-8.147-9.427-10.398-16.269
+  			l11.072-4.592c1.621,4.145,3.761,7.407,6.417,9.792c2.657,2.384,5.784,3.575,9.383,3.575c3.779,0,6.977-2.114,9.59-6.344
+  			c2.611-4.229,3.917-9.316,3.917-15.262c0-6.569-1.398-11.658-4.186-15.259c-3.245-4.228-8.332-6.347-15.262-6.347h-5.401V47.8
+  			l18.905-32.679h-22.822l-1.297,2.213l-27.755,93.661h-1.349L56.712,43.208l-20.254,67.787h-1.35L2.699,1.619h14.178l19.582,66.569
+  			L49.691,23.36L43.21,1.619H57.389L57.389,1.619z"/>
+  		<path fill-rule="evenodd" clip-rule="evenodd" class="w3c_dark" d="M223.205,7.33c2.067,0,3.016,0.575,3.016,2.009
+  			c0,1.379-0.949,1.867-2.96,1.867h-1.869V7.33H223.205L223.205,7.33z M223.605,5.896h-4.417v11.71h2.204v-4.993h2.188l2.385,4.993
+  			h2.466l-2.612-5.336c1.692-0.347,2.67-1.495,2.67-3.159C228.489,6.984,226.879,5.896,223.605,5.896L223.605,5.896z M232.306,12.04
+  			c0,2.38-0.92,4.592-2.614,6.228c-1.779,1.722-3.991,2.642-6.432,2.642c-2.294,0-4.561-0.947-6.256-2.67
+  			c-1.694-1.725-2.641-3.935-2.641-6.289c0-2.353,0.979-4.65,2.729-6.429c1.633-1.665,3.845-2.553,6.256-2.553
+  			c2.471,0,4.681,0.919,6.399,2.669C231.415,7.3,232.306,9.543,232.306,12.04L232.306,12.04z M223.321,1.619
+  			c-2.781,0-5.283,1.004-7.18,2.927c-2.004,2.037-3.128,4.68-3.128,7.404c0,2.729,1.065,5.254,3.017,7.236
+  			c1.979,2.009,4.535,3.1,7.291,3.1c2.696,0,5.309-1.09,7.35-3.072c1.949-1.893,3.015-4.42,3.015-7.264
+  			c0-2.754-1.095-5.338-2.987-7.26C228.714,2.681,226.133,1.619,223.321,1.619L223.321,1.619z M205.936,1l-8.008,15.968
+  			c0,0-3.44-6.347-6.839-9.252c-3.235-2.764-7.425-5.321-12.727-4.771c-5.125,0.529-10.902,5.037-14.79,12.55
+  			c-4.417,8.544-5.916,17.202-5.947,26.749c-0.045,13.377,4.89,22.506,4.89,22.506s-1.133-4.242-0.944-11.429
+  			c0.122-4.483,0.149-9.361,3.533-19.443c2.834-8.424,9.312-15.258,15.026-16.438c4.453-0.917,7.298-0.25,11.669,2.829
+  			c5.183,3.654,8.306,10.252,8.306,10.252l8.128-15.555L205.936,1L205.936,1z M206.938,80.01c0,0-3.593,6.423-5.835,8.896
+  			c-2.235,2.473-6.245,6.835-11.192,9.017c-4.948,2.18-7.54,2.591-12.432,2.121c-4.887-0.473-9.427-3.301-11.017-4.48
+  			c-1.595-1.18-5.657-4.655-7.955-7.893c-2.298-3.241-5.894-9.722-5.894-9.722s2.004,6.496,3.256,9.252
+  			c0.721,1.587,2.939,6.438,6.085,10.661c2.936,3.94,8.631,10.724,17.291,12.259c8.659,1.529,14.614-2.361,16.084-3.302
+  			c1.472-0.942,4.576-3.538,6.54-5.643c2.053-2.192,3.991-4.99,5.068-6.673c0.782-1.224,2.064-3.711,2.064-3.711L206.938,80.01
+  			L206.938,80.01z"/>
+  	</g>
+
+		<g class="next">
+  	<rect id="divider" x="258.623" y="1.619" width="5" height="108.501"/>
+
+  	<g id="20th_Anniversary_logo">
+  		<path id="Anniversary_1_" class="w3c_light" d="M355.571,132.277l-0.428-2.638h-2.681l-0.428,2.638h-2.768l2.981-14.303h3.108
+  			l2.98,14.303H355.571z M353.813,120.999l-1.029,6.261h2.037L353.813,120.999z M365.392,132.277l-2.916-8.19v8.19h-2.701v-14.303
+  			h2.701l2.744,7.911v-7.911h2.701v14.303H365.392z M376.187,132.277l-2.916-8.19v8.19h-2.703v-14.303h2.703l2.745,7.911v-7.911
+  			h2.701v14.303H376.187z M381.266,132.277v-14.303h2.702v14.303H381.266z M388.625,132.277l-2.98-14.303h2.766l1.779,10.828
+  			l1.758-10.828h2.768l-2.981,14.303H388.625z M396.468,132.277v-14.303h6.262v2.38h-3.56v3.452h3.409v2.381h-3.409v3.709h3.56
+  			v2.381H396.468z M410.302,132.277l-1.545-5.254h-0.878v5.254h-2.702v-14.303h3.988c2.273,0,3.902,1.823,3.902,4.438
+  			c0,2.423-1.029,3.517-1.844,3.967l1.973,5.897H410.302z M410.302,122.499c0-1.286-0.537-2.145-1.564-2.145h-0.858v4.288h0.858
+  			C409.765,124.642,410.302,123.786,410.302,122.499z M414.437,131.118l1.158-2.122c0.601,0.75,1.523,1.136,2.358,1.136
+  			c0.859,0,1.438-0.643,1.438-1.564c0-2.531-4.547-2.509-4.547-6.84c0-2.144,1.459-3.988,3.969-3.988
+  			c1.221,0,2.337,0.407,3.108,1.156l-1.029,2.08c-0.558-0.579-1.223-0.836-1.974-0.836c-0.771,0-1.329,0.58-1.329,1.438
+  			c0,2.229,4.546,2.53,4.546,6.819c0,2.401-1.587,4.138-4.01,4.138C416.56,132.534,415.359,132.041,414.437,131.118z
+  			 M429.182,132.277l-0.428-2.638h-2.681l-0.429,2.638h-2.767l2.981-14.303h3.108l2.98,14.303H429.182z M427.424,120.999
+  			l-1.029,6.261h2.037L427.424,120.999z M438.548,132.277l-1.544-5.254h-0.879v5.254h-2.701v-14.303h3.987
+  			c2.273,0,3.902,1.823,3.902,4.438c0,2.423-1.028,3.517-1.845,3.967l1.974,5.897H438.548z M438.548,122.499
+  			c0-1.286-0.537-2.145-1.565-2.145h-0.857v4.288h0.857C438.011,124.642,438.548,123.786,438.548,122.499z M445.354,132.277v-5.919
+  			l-3.345-8.384h2.872l1.822,5.769l1.845-5.769h2.853l-3.345,8.384v5.919H445.354z"/>
+  		<path class="lighter" d="M407.697,95.866L407.697,95.866L407.697,95.866L407.697,95.866z M411.516,105.815l5.795-19.387
+  			c-0.184,0.107-0.376,0.197-0.562,0.301c0.002-0.001,0.005-0.002,0.007-0.004l-6.658,16.305l1.842,5.496
+  			c1.477-0.349,2.929-0.756,4.355-1.223l-0.027-0.162l-0.023,0.078L411.516,105.815z M424.291,103.947
+  			c0.667-0.345,1.317-0.713,1.968-1.084l1.689-17.622L424.291,103.947z M417.344,103.538l1.339,2.923
+  			c0.034-0.013,0.066-0.028,0.101-0.042l4.363-22.303L417.344,103.538z M437.798,94.088c0.256-0.255,0.497-0.525,0.747-0.786
+  			l-0.771-7.519L437.798,94.088z M431.541,99.433c0.447-0.329,0.902-0.647,1.339-0.989l-0.034-12.64L431.541,99.433z
+  			 M407.697,95.866L407.697,95.866L407.697,95.866l2.578-6.31c-0.427,0.136-0.864,0.246-1.298,0.366l-5.627,10.665l1.463,9.123
+  			c1.672-0.164,3.32-0.405,4.945-0.718l-0.64-4.072l-4.393-1.782L407.697,95.866z M442.667,85.177l0.299,2.917
+  			c0.079-0.105,0.158-0.209,0.236-0.315L442.667,85.177z M391.968,95.794l3.202-4.843c-0.756-0.096-1.506-0.211-2.247-0.355
+  			c0.001,0,0.001,0,0.001,0l-2.984,3.666l-2.543-2.06l-4.059,15.134c1.554,0.518,3.14,0.957,4.747,1.328L392.284,93l-2.005,16.12
+  			c1.607,0.298,3.234,0.526,4.884,0.669l1.513-12.173l-0.587,0.889L391.968,95.794z M387.737,89.154
+  			c-0.813-0.294-1.616-0.614-2.402-0.965c0.003,0.001,0.006,0.002,0.009,0.004l-1.173,1.177l-3.504-3.473l0.142-0.142
+  			c0.002,0.001,0.004,0.002,0.006,0.003c-8.604-5.438-14.843-14.43-16.562-24.698c-1.389,1.697-6.135,6.002-10.087,9.49
+  			l10.085-2.521l-13.658,5.646c-0.625,0.541-1.16,1-1.544,1.327c0.543,1.324,1.142,2.626,1.785,3.906l15.936-6.583l-14.891,8.555
+  			c0.796,1.438,1.655,2.84,2.573,4.207l14.411-8.283l-13.188,10.035c0.967,1.328,1.989,2.617,3.065,3.861l12.843-9.774
+  			l-11.459,11.316c1.119,1.203,2.289,2.359,3.507,3.464l11.211-11.073l-9.68,12.415c1.254,1.061,2.553,2.071,3.896,3.021
+  			l9.545-12.245l-7.866,13.388c1.374,0.9,2.79,1.736,4.24,2.513l7.834-13.335l-5.999,14.272c1.475,0.719,2.98,1.38,4.521,1.963
+  			l6.062-14.425l-1.287-1.042L387.737,89.154z M398.192,99.792l4.606-8.728c-0.618,0.058-1.242,0.089-1.868,0.114l-3.577,5.413
+  			l0.214,13.347c0.642,0.024,1.286,0.04,1.933,0.04c1.054,0,2.098-0.041,3.137-0.101l-0.073-7.798l-0.003,0.006L398.192,99.792z"/>
+  		<path class="darker" d="M400.931,91.178l-3.577,5.413l-0.678,1.025l-0.587,0.889l-4.121-2.71l3.202-4.843l0,0
+  			c0.653,0.083,1.312,0.145,1.976,0.192c0.098,0.007,0.194,0.015,0.292,0.021c0.683,0.043,1.37,0.069,2.062,0.069
+  			C399.981,91.233,400.454,91.197,400.931,91.178L400.931,91.178z M408.978,89.921c-0.929,0.258-1.873,0.477-2.829,0.661
+  			c-0.104,0.02-0.208,0.042-0.312,0.061c-0.999,0.183-2.011,0.326-3.037,0.421l0,0l-4.606,8.728l4.368,2.293l0.003-0.006
+  			l0.787-1.492L408.978,89.921L408.978,89.921z M443.202,87.779l0.004,0.021c0.1-0.135,0.19-0.276,0.288-0.412
+  			c0.29-0.401,0.573-0.807,0.852-1.216c0.274-0.403,0.541-0.812,0.806-1.222c0.263-0.41,0.527-0.819,0.78-1.236
+  			c0.305-0.503,0.594-1.017,0.882-1.531c0.284-0.506,0.563-1.014,0.832-1.53c0.336-0.646,0.665-1.296,0.976-1.957
+  			c0.167-0.355,0.321-0.717,0.48-1.076c0.252-0.567,0.497-1.139,0.729-1.716c0.146-0.36,0.286-0.723,0.424-1.087
+  			c0.237-0.627,0.46-1.262,0.674-1.9c0.105-0.313,0.215-0.625,0.314-0.94c0.302-0.958,0.584-1.924,0.833-2.904h-19.689
+  			c-0.353,0.866-0.744,1.713-1.161,2.544c-0.138,0.273-0.292,0.535-0.437,0.804c-0.295,0.551-0.593,1.099-0.916,1.632
+  			c-0.186,0.307-0.385,0.603-0.58,0.904c-0.31,0.479-0.624,0.954-0.956,1.417c-0.218,0.304-0.444,0.6-0.672,0.896
+  			c-0.339,0.442-0.686,0.877-1.044,1.303c-0.241,0.286-0.485,0.568-0.735,0.846c-0.376,0.418-0.763,0.826-1.158,1.227
+  			c-0.255,0.258-0.508,0.516-0.771,0.767c-0.428,0.407-0.87,0.798-1.317,1.185c-0.251,0.217-0.497,0.439-0.754,0.649
+  			c-0.521,0.425-1.062,0.828-1.607,1.224c-0.202,0.147-0.396,0.303-0.601,0.446c-0.769,0.533-1.557,1.041-2.367,1.514v0
+  			l-5.795,19.387l4.729,1.404l0.023-0.078l1.076-3.604l5.803-19.422l-4.363,22.303l-0.001,0.005
+  			c0.979-0.373,1.941-0.776,2.892-1.203c0.143-0.064,0.279-0.138,0.421-0.203c0.738-0.339,1.474-0.684,2.193-1.055l0.003-0.016
+  			l3.657-18.706l-1.689,17.622l-0.003,0.031c0.228-0.13,0.445-0.274,0.67-0.407c0.4-0.236,0.796-0.479,1.189-0.724
+  			c0.523-0.326,1.041-0.659,1.553-1.003c0.362-0.243,0.721-0.491,1.077-0.743c0.262-0.186,0.533-0.357,0.792-0.547l0.004-0.037
+  			l1.305-13.629l0.034,12.64v0.01c0.81-0.634,1.596-1.294,2.366-1.972c0.02-0.017,0.04-0.032,0.06-0.049
+  			c0.567-0.501,1.112-1.026,1.659-1.55c0.244-0.234,0.5-0.458,0.74-0.696c0.03-0.03,0.062-0.058,0.093-0.087v-0.01l-0.023-8.305
+  			l0.771,7.519l0.003,0.025c0.172-0.178,0.328-0.37,0.498-0.55c0.489-0.523,0.972-1.053,1.44-1.594
+  			c0.249-0.288,0.494-0.58,0.737-0.874c0.48-0.579,0.949-1.166,1.406-1.765c0.109-0.145,0.23-0.28,0.339-0.426l-0.003-0.024
+  			l-0.299-2.917L443.202,87.779z M416.749,86.729c-0.847,0.473-1.719,0.907-2.604,1.313c-0.303,0.139-0.607,0.275-0.914,0.406
+  			c-0.328,0.139-0.658,0.275-0.992,0.405c-0.642,0.25-1.29,0.486-1.95,0.698c-0.004,0.001-0.009,0.003-0.013,0.004l0,0l-2.578,6.31
+  			l0,0l-2.971,7.271l4.393,1.782l0.178,0.072l0.801-1.962l6.658-16.305C416.754,86.727,416.751,86.728,416.749,86.729z
+  			 M392.924,90.596C392.924,90.596,392.924,90.596,392.924,90.596c-0.884-0.172-1.756-0.38-2.615-0.619
+  			c-0.008-0.002-0.015-0.004-0.021-0.006c-0.862-0.241-1.713-0.514-2.55-0.817l0,0l-1.631,2.003l1.287,1.042l0.003,0.002l2.543,2.06
+  			L392.924,90.596z M380.667,85.897l3.504,3.473l1.173-1.177c-0.003-0.001-0.006-0.003-0.009-0.004
+  			c-1.567-0.702-3.076-1.518-4.521-2.431c-0.002-0.001-0.004-0.002-0.006-0.003L380.667,85.897z"/>
+  		<g id="_x32_0th">
+  			<path class="darkest" d="M451.943,46.539h-19.164c-4.063-15.126-17.89-26.296-34.279-26.296   c-13.861,0-28.238,9.215-33.167,23.745
+  				c-1.583,4.667-3.399,8.042-5.466,10.887c-2.27,3.128-5.143,6.279-8.623,9.456c-3.479,3.177-27.87,26.482-27.87,26.482h46.475
+  				v12.122l-4.686,7.185H289.75V95.468c0,0,40.764-36.872,43.003-39.599c4.256-5.183,12.581-11.214,12.914-18.214
+  				c0.473-9.934-6-17.412-16.834-17.412c-12.165,0-20.65,10.015-24.785,15.359l-13.162-11.287
+  				c2.519-3.529,13.119-22.697,38.614-22.697c20.681,0,30.711,12.459,32.048,14.47c9.69-9.043,22.682-14.59,36.952-14.59
+  				C425.271,1.499,447.559,21,451.943,46.539z M438.285,63.167v-7.755h2.79v-2.25H432.9v2.25h2.805v7.755H438.285z M451.992,63.167
+  				V53.163h-2.58v3.735h-4.155v-3.735h-2.579v10.004h2.579v-4.02h4.155v4.02H451.992z"/>
+  		</g>
+  	</g>
+  	</g>
+  </g>
+</svg>
+
+	</div></section>
+	<section class="slide shout"><div>
+		<h2 class="small">Disclaimer
+		<small><br>This course is not a W3C course.<br>Views expressed are my own.</small>
+		<small><br>Dies ist kein W3C-Kurs.<br>Alle Ansichten sind meine Eigenen.</small>
+		</h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2>Detour Webstandards</h2>
+		<ul>
+			<li><strong>W3C</strong>: World Wide Web Consortium</li>
+			<li><strong>WHATWG</strong>: Web Hypertext Application Technology Working Group</li>
+			<li><strong>Ecma International</strong></li>
+			<li><strong>ISO</strong>: International Organization for Standardization</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>HTML5</h2>
+		<pre><code>&lt;h1 class="fancy"&gt;This is a heading&lt;/h1&gt;</code></pre>
+		<ul>
+			<li>HTML4 developed by WHATWG as an alternative to W3C’s XHTML2</li>
+			<li>Today: Development in parallel in WHATWG („Living Standard“) and in the HTML Working Group of W3C („Snapshots“)</li>
+			<li>Discussion over the direction of the specification</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>CSS</h2>
+		<pre><code>.fancy { font-family: fantasy; }</code></pre>
+		<ul>
+			<li>W3C’s CSS Working group is working on a <a href="http://www.w3.org/Style/CSS/current-work">dozen modules</a>.</li>
+			<li>Things we got recently: Flexbox, Grids, Masking, Fonts, Animations, Transforms, Transitions.</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>ECMA Script</h2>
+		<pre><code>document.querySelector('body').style.backgroundColor =
+	'rebeccapurple';</code></pre>
+		<ul>
+			<li class="next"><abbr title="Also Known As">AKA</abbr> JavaScript<span class="next">, <abbr title="Also Known As">AKA</abbr> ActionScript</span></li>
+      <li>In the beginning just for client-side use cases</li>
+			<li>Now a universal programming language</li>
+			<li>Also on the server using node.js</li>
+		</ul>
+	</div></section>
+	<section class="slide w h"><div>
+		<h2>W3C Process</h2>
+<svg viewBox="0 0 406 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(0.000000, 1.000000)">
+            <g transform="translate(0.000000, 26.000000)" fill="#000000">
+                <text font-family="Helvetica" font-size="8" font-weight="normal">
+                    <tspan x="0" y="8">First WD</tspan>
+                </text>
+                <path d="M0,10 L33,10" stroke="#000000"></path>
+                <path d="M32,6 L42,10 L32,14 L32,6 Z" stroke="#000000"></path>
+            </g>
+            <g transform="translate(43.000000, 18.000000)">
+                <ellipse stroke="#000000" cx="38" cy="18" rx="38" ry="18"></ellipse>
+                <text fill="#000000" font-family="Helvetica" font-size="14" font-weight="normal">
+                    <tspan x="26" y="22">WD</tspan>
+                </text>
+            </g>
+            <g transform="translate(60.000000, 0.000000)" stroke="#000000">
+                <path d="M2,20 C-3,10 3,0 21,0 C32,0 39,4 41,10" stroke-dasharray="6"></path>
+                <path d="M44,10 L40,20 L38,9 L44,10 Z" fill="#000000"></path>
+            </g>
+            <g transform="translate(119.000000, 32.000000)" fill="#000000" stroke="#000000">
+                <path d="M0,4 L31,4"></path>
+                <path d="M26,0 L36,4 L26,8 L26,0 Z"></path>
+            </g>
+            <g transform="translate(156.000000, 18.000000)">
+                <ellipse stroke="#000000" cx="38" cy="18" rx="38" ry="18"></ellipse>
+                <text fill="#000000" font-family="Helvetica" font-size="14" font-weight="normal">
+                    <tspan x="27.5" y="22">CR</tspan>
+                </text>
+            </g>
+            <g transform="translate(174.000000, 0.000000)" stroke="#000000">
+                <path d="M2,20 C-2,10 4,0 20,0 C31,0 37,4 39,10" stroke-dasharray="5"></path>
+                <path d="M42,10 L37,20 L35,9 L42,10 Z" fill="#000000"></path>
+            </g>
+            <g transform="translate(117.000000, 41.000000)" stroke="#666666" fill="#666666">
+                <path d="M7,2 L41,2" stroke-dasharray="4"></path>
+                <path d="M7,0 L0,2 L7,4 L7,0 Z"></path>
+            </g>
+            <g transform="translate(232.000000, 32.000000)" fill="#000000" stroke="#000000">
+                <path d="M0,4 L27,4"></path>
+                <path d="M26,0 L36,4 L26,8 L26,0 Z"></path>
+            </g>
+            <g transform="translate(269.000000, 18.000000)">
+                <ellipse stroke="#000000" cx="28" cy="18" rx="28" ry="18"></ellipse>
+                <text fill="#000000" font-family="Helvetica" font-size="14" font-weight="normal">
+                    <tspan x="18" y="22">PR</tspan>
+                </text>
+            </g>
+            <g transform="translate(230.000000, 41.000000)" stroke="#AAAAAA" fill="#AAAAAA">
+                <path d="M5,2 L43,2" stroke-dasharray="2"></path>
+                <path d="M5,0 L0,2 L5,4 L5,0 Z"></path>
+            </g>
+            <g transform="translate(325.000000, 32.000000)" fill="#000000" stroke="#000000">
+                <path d="M0,4 L20,4"></path>
+                <path d="M13,0 L23,4 L13,8 L13,0 Z"></path>
+            </g>
+            <g transform="translate(349.000000, 18.000000)">
+                <ellipse stroke="#000000" cx="28" cy="18" rx="28" ry="18"></ellipse>
+                <text fill="#000000" font-family="Helvetica" font-size="14" font-weight="normal">
+                    <tspan x="13" y="22">REC</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>
+<ul>
+	<li>WD: Working Draft</li>
+	<li>CR: Candidate Recommendation</li>
+	<li>PR: Proposed Recommendation</li>
+	<li>REC: Recommendation</li>
+</ul>
+<footer>
+	<p>Source: <a href="http://www.w3.org/2014/Process-20140801/#Reports">W3C Process</a></p>
+</footer>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>End Webstandards Detour</h2>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>Accessibility &amp;<br> Multi-Screen Design</h2>
+	</div></section>
+	<section class="slide cover h"><div>
+		<img src="images/fry.png" alt="">
+	</div></section>
+	<section class="slide"><div>
+		<h2>Accessibility …</h2>
+		<ul>
+			<li>In German: <span lang="de">„Barrierefreiheit“</span></li>
+			<li>People with Disabilities</li>
+			<li>Access content</li>
+			<li>Adapt the web to one’s needs</li>
+			<li>Understand and interact with websites</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>… and Multi-Screen Design …</h2>
+		<ul>
+			<li>Show contents optimized for all devices</li>
+			<li>Everything needs to look good although you don’t know what device will access the content</li>
+			<li>Performance</li>
+			<li>Progressive Enhancement</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>… are very similar things.</h2>
+		<p>Just looked at in different ways.</p>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>Accessibility and Multi-Screen Design <em>are very similar things</em>.</h2>
+	</div></section>
+	<section class="slide shout up"><div>
+		<h2 class="">Questions!</h2>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>Who knows People with Disabilities?</h2>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2>Who is in contact with People with Disabilities regularly?</h2>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2 class="smaller">Who is so with People with Disabilities at the age of<br>
+		<span class="next">— under 70?</span><br>
+		<span class="next">— under 50?</span><br>
+		<span class="next">— under 30?</span></h2>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2 class="">Percentage of people with disabilities:</h2>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2 class="loud">15,3%</h2>
+		<footer>
+			Source: <a href="http://www.who.int/disabilities/world_report/2011/report.pdf">WHO</a>
+		</footer>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2 class="">1.1 billion people</h2>
+	</div></section>
+	<section class="slide"><div>
+		<table>
+			<thead>
+				<tr><th scope="col">Age</th> <th>Percentage of People with Disabilities</th></tr>
+			</thead>
+			<tbody>
+				<tr><th>16–24</th> <td><meter value="6" min="0" max="100"></meter> 06%</td></tr>
+				<tr><th>25–34</th> <td><meter value="9" min="0" max="100"></meter> 09%</td></tr>
+				<tr><th>35–44</th> <td><meter value="11" min="0" max="100"></meter> 11%</td></tr>
+				<tr><th>45–54</th> <td><meter value="17" min="0" max="100"></meter> 17%</td></tr>
+				<tr><th>55–64</th> <td><meter value="23" min="0" max="100"></meter> 23%</td></tr>
+				<tr><th>65–74</th> <td><meter value="26" min="0" max="100"></meter> 26%</td></tr>
+				<tr><th>75–84</th> <td><meter value="31" min="0" max="100"></meter> 31%</td></tr>
+				<tr><th>85+</th> <td><meter value="38" min="0" max="100"></meter> 38%</td></tr>
+			</tbody>
+		</table>
+		<footer>
+			<p>Source: <span><a href="http://www.bfs.admin.ch/bfs/portal/de/index/themen/20/06/blank/key/01.html">Gleichstellung von Menschen mit Behinderungen – Daten, Indikatoren</a></span></p>
+		</footer>
+	</div></section>
+	<section class="slide"><div>
+		<table>
+			<thead>
+				<tr><th scope="col" rowspan="2">Age</th> <th scope="colgroup" colspan="2">Internet use</th></tr>
+				<tr><th scope="col">2009</th> <th scope="col">2014</th></tr>
+			</thead>
+			<tbody>
+				<tr><th>14–19</th> <td><meter value="97.5" min="0" max="100"></meter> 97,5%</td><td><meter value="100" min="0" max="100"></meter> 100%</td></tr>
+				<tr><th>20–29</th> <td><meter value="95.2" min="0" max="100"></meter> 95,2%</td><td><meter value="99.4" min="0" max="100"></meter> 99,4%</td></tr>
+				<tr><th>30–39</th> <td><meter value="89.4" min="0" max="100"></meter> 89,4%</td><td><meter value="97.4" min="0" max="100"></meter> 97.4%</td></tr>
+				<tr><th>40–54</th> <td><meter value="80.2" min="0" max="100"></meter> 80,2%</td><td><meter value="93.9" min="0" max="100"></meter> 93.9%</td></tr>
+				<tr><th>50–64</th> <td><meter value="67.4" min="0" max="100"></meter> 67,4%</td><td><meter value="82.1" min="0" max="100"></meter> 82.1%</td></tr>
+				<tr><th>60+</th> <td><meter value="27.1" min="0" max="100"></meter> 27,1%</td><td><meter value="45.4" min="0" max="100"></meter> 45,4%</td></tr>
+			</tbody>
+		</table>
+		<footer>
+			Source: <a href="http://www.ard-zdf-onlinestudie.de/index.php?id=504">ard-zdf-onlinestudie.de</a>
+		</footer>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2 class="">Make the web accessible for <br><em>your future selves</em>.</h2>
+	</div></section>
+	<!--
+	<section class="slide cover w h"><div>
+		<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/gZFHK3OwzFM" frameborder="0" allowfullscreen></iframe>
+	</div></section>
+	-->
+	<section class="slide shout"><div>
+		<h2 class="">Convention on the Rights of Persons with Disabilities <br><small>or: “CRPD”</small></h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="">Contents of the CRPD related to COS</h2>
+		<ul>
+			<li>Equal opportunities and nondiscrimination, Article 5</li>
+			<li>Access to justice, Article 13</li>
+			<li>Inclusive education, Article 24</li>
+			<li>Participation in political and public life, Article 29</li>
+		</ul>
+    <p><a href="http://www.un.org/disabilities/convention/conventionfull.shtml">Convention on the Rights of Persons with Disabilities</a></p>
+	</div></section>
+	<!--
+	<section class="slide"><div>
+		<h2 class="">Inhalte der UN-Behindertenrechtskonvention</h2>
+		<ul>
+			<li>Chancengleichheit und Nichtdiskriminierung, Artikel 5</li>
+			<li>Gleichberechtigte Teilhabe an der Gemeinschaft (Inklusion)</li>
+			<li>Inklusive Gesellschaft</li>
+			<li>Geschäftsfähigkeit und Einwilligungsfähigkeit als gleiche Anerkennung vor dem Recht, Artikel 12</li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2 class="">Inhalte der UN-Behindertenrechtskonvention (2)</h2>
+		<ul>
+			<li>Zugang zur Justiz, Artikel 13</li>
+			<li>Inklusive Bildung, Artikel 24</li>
+			<li>Recht auf das erreichbare Höchstmaß an Gesundheit, Artikel 25</li>
+			<li>Teilhabe am politischen und öffentlichen Leben, Artikel 29</li>
+		</ul>
+	</div></section>
+	-->
+	<section class="slide"><div>
+		<h2>W3C Accessibility Documents</h2>
+		<ul>
+			<li><a href="http://www.w3.org/TR/WCAG/"><strong>Web Content Accessibility Guidelines (WCAG) 2.0 — REC</strong></a></li>
+			<li><a href="http://www.w3.org/TR/ATAG20/">Authoring Tools Accessibility Guidelines (ATAG) 2.0 — CR</a></li>
+			<li><a href="http://www.w3.org/TR/UAAG20/">User Agent Accessibility Guidelines (UAAG) 2.0 — WD</a></li>
+			<li><a href="http://www.w3.org/TR/WCAG-EM/">Website Accessibility Conformance Evaluation Methodology (WCAG-EM) 1.0 — NOTE</a></li>
+			<li><a href="http://www.w3.org/TR/wai-aria/">Accessible Rich Internet Applications (WAI-ARIA) 1.0 — REC</a></li>
+			<li>Independent User Interface (IndieUI) <a href="http://www.w3.org/TR/indie-ui-events/">Events 1.0 (WD)</a> and <a href="http://www.w3.org/TR/indie-ui-context/">User Context 1.0 (WD)</a></li>
+		</ul>
+	</div></section>
+	<section class="slide"><div>
+		<h2>W3C Supporting Documents</h2>
+		<ul>
+			<li><a href="http://www.w3.org/WAI/eval/preliminary">Easy Checks</a></li>
+			<li><a href="http://www.w3.org/WAI/ER/tools">Evaluation Tools List</a></li>
+			<li><a href="http://www.w3.org/WAI/intro/people-use-web/">How People with disabilities use the web</a></li>
+			<li><a href="http://www.w3.org/WAI/demos/bad/">Before and After Demo (BAD)</a></li>
+			<li><a href="http://www.w3.org/WAI/tutorials">Web Accessibility Tutorials</a></li>
+		</ul>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2 class="loud">WCAG</h2>
+	</div></section>
+	<section class="slide cover w h"><div>
+		<iframe width="420" height="315" src="https://www.youtube-nocookie.com/embed/-IWBT4Tk3t0" frameborder="0" allowfullscreen></iframe>
+	</div></section>
+	<section class="slide"><div>
+		<h2>4 Principles</h2>
+		<ol>
+			<li class="next">Perceivable</li>
+			<li class="next">Operable</li>
+			<li class="next">Understandable</li>
+			<li class="next">Robust</li>
+		</ol>
+	</div></section>
+	<section class="slide"><div>
+		<h2>12 Guidelines</h2>
+		<ol>
+			<li>Principle 1: Perceivable
+			<ol>
+				<li>Text Alternatives: Provide text alternatives for any non-text content so that it can be changed into other forms people need, such as large print, braille, speech, symbols or simpler language.</li>
+				<li>Time-based Media: Provide alternatives for time-based media.</li>
+				<li>Adaptable: Create content that can be presented in different ways (for example simpler layout) without losing information or structure.</li>
+				<li>Distinguishable: Make it easier for users to see and hear content including separating foreground from background. </li>
+			</ol>
+			</li>
+		</ol>
+	</div></section>
+	<section class="slide"><div>
+		<h2>12 Guidelines (cont.)</h2>
+		<ol start="2">
+			<li>
+				Principle 2: Operable
+				<ol>
+					<li>Keyboard Accessible: Make all functionality available from a keyboard.</li>
+					<li>Enough Time: Provide users enough time to read and use content. </li>
+					<li>Seizures: Do not design content in a way that is known to cause seizures.</li>
+					<li>Navigable: Provide ways to help users navigate, find content, and determine where they are. </li>
+				</ol>
+			</li>
+		</ol>
+	</div></section>
+	<section class="slide"><div>
+		<h2>12 Guidelines (cont.)</h2>
+		<ol start="3">
+			<li>
+				Principle 3: Understandable
+				<ol>
+					<li>Readable: Make text content readable and understandable.</li>
+					<li>Predictable: Make Web pages appear and operate in predictable ways. </li>
+					<li>Input Assistance: Help users avoid and correct mistakes. </li>
+				</ol>
+			</li>
+			<li>
+				Principle 4: Robust
+				<ol>
+					<li>Compatible: Maximize compatibility with current and future user agents, including assistive technologies.</li>
+				</ol>
+			</li>
+		</ol>
+	</div></section>
+	<section class="slide"><div>
+		<h2>3 Levels</h2>
+		<ol>
+			<li>A — Basic</li>
+			<li>AA — Best Practices</li>
+			<li>AAA — Advanced</li>
+		</ol>
+		<p>AA is considered to be the minimally accepted standard today.</p>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2 class="loud">Examples</small></h2>
+	</div></section>
+	<section class="slide"><div>
+		<h2>1.1.1 Non-text Content (Level A)</h2>
+		<p>All non-text content that is presented to the user has a <mark>text alternative</mark> that serves the equivalent purpose […].</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>1.2.2 Captions (Prerecorded) (Level A)</h2>
+		<p> Captions are provided for all prerecorded audio content in synchronized media, except when the media is a media alternative for text and is clearly labeled as such.</p>
+	</div></section>
+	<section class="slide cover w h"><div>
+		<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/sIB6-8uB0jA" frameborder="0" allowfullscreen></iframe>
+	</div></section>
+	<section class="slide"><div>
+		<h2>1.2.3 Audio Description or Media Alternative (Prerecorded) (Level A)</h2>
+		<p>An alternative for time-based media or audio description of the prerecorded video content is provided for synchronized media, except when the media is a media alternative for text and is clearly labeled as such.</p>
+	</div></section>
+	<section class="slide cover w h"><div>
+		<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/eZsR6Ntlsi4" frameborder="0" allowfullscreen></iframe>
+	</div></section>
+	<section class="slide"><div>
+		<h2>1.3.2 Meaningful Sequence (Level A)</h2>
+		<p>When the sequence in which content is presented affects its meaning, a correct reading sequence can be programmatically determined.</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>1.4.1 Use of Color (Level A)</h2>
+		<p>Color is not used as the only visual means of conveying information, indicating an action, prompting a response, or distinguishing a visual element.</p>
+	</div></section>
+	<section class="slide"><div>
+		<h2>1.4.3 Contrast (Minimum) (Level AA)</h2>
+		<p>The visual presentation of text and images of text has a contrast ratio of at least 4.5:1, except for the following:</p>
+		<ul class="small">
+			<li><strong>Large Text:</strong> Large-scale text and images of large-scale text have a contrast ratio of at least 3:1;</li>
+			<li><strong>Incidental:</strong> Text or images of text that are part of an inactive user interface component, that are pure decoration, that are not visible to anyone, or that are part of a picture that contains significant other visual content, have no contrast requirement.</li>
+			<li><strong>Logotypes:</strong> Text that is part of a logo or brand name has no minimum contrast requirement.</li>
+		</ul>
+	</div></section>
+	<section class="slide shout"><div>
+		<h2 class="loud"><em>fin.</em></h2>
+	</div></section>
+
+    <section class="slide shout"><div>
+    <h2 class="small">Accessibility &amp;<br> Multi-Screen Design <strong class="section">Outlook</strong></h2>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Multi-Screen Design</h2>
+    <div class="iconrow">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="next">
+    <title>Watch</title>
+<path fill="#444444" d="M15 10c0-0.552 0.448-1 1-1s1 0.448 1 1c0 0.552-0.448 1-1 1s-1-0.448-1-1zM15 22c0-0.552 0.448-1 1-1s1 0.448 1 1c0 0.552-0.448 1-1 1s-1-0.448-1-1zM9 16c0-0.552 0.448-1 1-1s1 0.448 1 1c0 0.552-0.448 1-1 1s-1-0.448-1-1zM21 16c0-0.552 0.448-1 1-1s1 0.448 1 1c0 0.552-0.448 1-1 1s-1-0.448-1-1zM10.757 20.242c0-0.552 0.448-1 1-1s1 0.448 1 1c0 0.552-0.448 1-1 1s-1-0.448-1-1zM10.757 11.757c0-0.552 0.448-1 1-1s1 0.448 1 1c0 0.552-0.448 1-1 1s-1-0.448-1-1zM19.242 20.242c0-0.552 0.448-1 1-1s1 0.448 1 1c0 0.552-0.448 1-1 1s-1-0.448-1-1zM26 14c-0.070 0-0.129 0.033-0.197 0.040-0.348-1.745-1.17-3.306-2.297-4.594l-1.436-7.812c-0.175-0.947-1.002-1.634-1.966-1.634h-8c-0.964 0-1.79 0.688-1.967 1.635l-1.4 7.549c-1.68 1.787-2.737 4.168-2.737 6.816 0 2.583 1.014 4.905 2.621 6.678l1.412 7.688c0.176 0.946 1.003 1.634 1.967 1.634h8c0.963 0 1.789-0.688 1.967-1.635l1.424-7.682c1.189-1.311 2.053-2.92 2.412-4.725 0.068 0.009 0.127 0.042 0.197 0.042 1.104 0 2-0.896 2-2 0-1.105-0.896-2-2-2zM12.104 2h8l1 5.387c-1.477-0.859-3.168-1.387-5-1.387-1.831 0-3.523 0.528-5 1.387l1-5.387zM20 30h-8l-1-5.387c1.476 0.858 3.168 1.387 5 1.387 1.831 0 3.524-0.529 5-1.387l-1 5.387zM16 24c-4.411 0-8-3.59-8-8s3.589-8 8-8c4.411 0 8 3.589 8 8 0 4.41-3.59 8-8 8zM20.941 11.026c0.121 0.121 0.133 0.316 0.028 0.449l-2.426 3.021-1.848 2.225c-0.189 0.182-0.449 0.275-0.699 0.277-0.269-0.002-0.52-0.106-0.707-0.292s-0.289-0.435-0.289-0.698c0-0.272 0.105-0.526 0.296-0.718l5.192-4.285c0.137-0.11 0.332-0.1 0.453 0.021z"></path>
+</svg>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="next">
+<title>Mobile</title>
+<path fill="#444444" d="M24 0h-16c-1.658 0-3 1.343-3 3v26c0 1.658 1.343 3 3 3h16c1.656 0 3-1.344 3-3v-26c0-1.658-1.344-3-3-3zM25 29c0 0.551-0.449 1-1 1h-16c-0.552 0-1-0.447-1-1v-2.004h18v2.004zM25 25.996h-18v-19.996h18v19.996zM25 5h-18v-2c0-0.552 0.448-1 1-1h16c0.551 0 1 0.448 1 1v2zM18 3.5c0 0.276-0.225 0.5-0.5 0.5h-3c-0.277 0-0.5-0.224-0.5-0.5v0c0-0.277 0.223-0.5 0.5-0.5h3c0.275 0 0.5 0.223 0.5 0.5v0zM17 28.496c0 0.275-0.225 0.5-0.5 0.5h-1c-0.276 0-0.5-0.225-0.5-0.5v0c0-0.277 0.224-0.5 0.5-0.5h1c0.275 0 0.5 0.223 0.5 0.5v0z"></path>
+</svg>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32">
+<title>Desktop</title>
+<path fill="#444444" d="M27 4.996l-22 0.004c-0.553 0-1 0.443-1 0.996v14c0 0.553 0.447 1 1 1h22c0.553 0 1-0.447 1-1v-14c0-0.553-0.447-1-1-1zM27 20h-22v-14.004h22v14.004zM29 1h-26c-1.657 0-3 1.342-3 3v20c0 1.654 1.338 2.994 2.99 2.998h10.010v1.217l-6.242 0.811c-0.446 0.111-0.758 0.511-0.758 0.97 0 0.553 0.447 1 1 1h18c0.553 0 1-0.447 1-1 0-0.459-0.312-0.859-0.758-0.971l-6.242-0.81v-1.217h10.010c1.652-0.004 2.99-1.344 2.99-2.998v-20c0-1.658-1.344-3-3-3zM30 24c0 0.551-0.449 1-1 1h-26c-0.552 0-1-0.449-1-1v-20c0-0.552 0.448-1 1-1h26c0.551 0 1 0.448 1 1v20z"></path>
+</svg>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" class="next">
+<title>TV</title>
+<path fill="#444444" d="M22.17 8.624c-2.707-0.557-5.455-0.839-8.165-0.839s-5.457 0.282-8.165 0.839c-0.35 0.072-0.636 0.326-0.749 0.667-1.442 4.381-1.442 8.823 0 13.204 0.112 0.34 0.398 0.594 0.749 0.666 2.708 0.556 5.455 0.839 8.165 0.839 2.709 0 5.458-0.283 8.165-0.84 0.352-0.072 0.637-0.326 0.75-0.666 1.441-4.381 1.441-8.823 0-13.204-0.113-0.34-0.399-0.594-0.75-0.666zM21.969 22.182c-5.309 1.090-10.619 1.090-15.927 0-1.381-4.193-1.381-8.385 0-12.579 5.309-1.091 10.619-1.091 15.927 0 1.381 4.193 1.381 8.385 0 12.579zM30.854 6.32c-0.193-0.814-0.875-1.422-1.705-1.522-4.36-0.53-8.782-0.798-13.144-0.798s-8.783 0.268-13.143 0.797c-0.83 0.101-1.511 0.708-1.704 1.523-1.529 6.423-1.529 12.936 0 19.36 0.193 0.814 0.874 1.422 1.704 1.521 2.101 0.256 4.216 0.443 6.331 0.576-0.114 0.073-0.188 0.147-0.188 0.223 0 0.553 3.134 1 7 1s7-0.447 7-1c0-0.076-0.074-0.15-0.188-0.223 2.115-0.133 4.23-0.32 6.33-0.576 0.83-0.1 1.512-0.707 1.705-1.521 1.531-6.424 1.531-12.937 0.002-19.36zM28.908 25.217c-8.602 1.043-17.204 1.043-25.805 0-1.463-6.145-1.463-12.29 0-18.434 8.602-1.044 17.204-1.044 25.805 0 1.463 6.144 1.463 12.289 0 18.434zM26.506 12c0.828 0 1.5-0.672 1.5-1.5s-0.672-1.5-1.5-1.5-1.5 0.672-1.5 1.5 0.672 1.5 1.5 1.5zM26.506 10c0.275 0 0.5 0.225 0.5 0.5s-0.225 0.5-0.5 0.5-0.5-0.225-0.5-0.5 0.224-0.5 0.5-0.5zM27.506 22c0.275 0 0.5 0.223 0.5 0.5 0 0.275-0.225 0.5-0.5 0.5h-3c-0.277 0-0.5-0.225-0.5-0.5 0-0.277 0.223-0.5 0.5-0.5h3zM28.506 19c0.275 0 0.5 0.223 0.5 0.5 0 0.275-0.225 0.5-0.5 0.5h-3c-0.277 0-0.5-0.225-0.5-0.5 0-0.277 0.223-0.5 0.5-0.5h3zM28.506 16c0.275 0 0.5 0.224 0.5 0.5s-0.225 0.5-0.5 0.5h-3c-0.277 0-0.5-0.224-0.5-0.5s0.223-0.5 0.5-0.5h3zM13.505 11.804c0.276-0.011 0.5 0.204 0.5 0.48s-0.225 0.508-0.5 0.518l-3.749 0.257c-0.273 0.028-0.527 0.274-0.564 0.546l-0.167 1.895c-0.011 0.275-0.245 0.5-0.518 0.5s-0.487-0.225-0.473-0.5l0.305-2.786c0.046-0.272 0.307-0.52 0.58-0.551l4.586-0.359z"></path>
+</svg>
+</div>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Further contents:</h2>
+    <ul>
+      <li>Structure and Labels</li>
+      <li>Images and Graphics</li>
+      <li>Audio and Video</li>
+      <li>Navigation</li>
+      <li>Forms</li>
+    </ul>
+  </div></section>
+  <section class="slide"><div>
+    <h2>Codepen examples</h2>
+    <img src="images/Screen Shot 2015-04-18 at 15.06.10.png" class="fullwidth" alt="">
+  </div></section>
+  <section class="slide cover h"><div>
+    <img src="images/chromevox.png" alt="Chromevox">
+  </div></section>
+  <section class="slide shout"><div>
+    <h2 class="loud"><em>fin.</em><br><small>Now for real.</small></h2>
+  </div></section>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+	<div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2014 Yours Truly, Famous Inc. -->
+</body>
+</html>
