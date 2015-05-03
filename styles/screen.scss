@@ -108,7 +108,7 @@ a {
 .slide {
 	// Header
 	h2 {
-		margin:0 0 58px;
+		margin:0 0 .35em;
 		font:48px/1 Alegreya, sans-serif;
 		font-weight: 700;
 		border-bottom: 1px solid lighten($color, 0.25);
@@ -126,7 +126,8 @@ a {
 		margin:0 0 48px;
 		}
 	p.note {
-		color:#AAA;
+		font-size: 75%;
+		opacity: .7;
 		}
 	b, strong {
 		font-weight:bold;
@@ -139,7 +140,12 @@ a {
 		background:rgba(#000, 0.08);
 		color:#000;
 		line-height:1;
-		font-family:'Anka Coder', monospace;
+		font-family:'Fira Mono', monospace;
+		}
+		p, li {
+			&>code, &>kbd, &>samp {
+				font-size: .8em;
+			}
 		}
 	mark {
 		padding:2px 7px;
@@ -222,16 +228,19 @@ a {
 		counter-reset:code;
 		white-space:normal;
 		tab-size:4;
+		&.small {
+			font-size: .8em;
+		}
 		code {
 			display:block;
 			padding:0;
 			background:none;
 			white-space:pre;
-			line-height:2;
+			line-height: 1.7;
 			&:before {
 				position:absolute;
 				margin-left:-50px;
-				color:#AAA;
+				color:#777;
 				counter-increment:code;
 				content:counter(code, decimal-leading-zero)'.';
 				}
@@ -249,7 +258,7 @@ a {
 			&.comment {
 				padding:0;
 				background:none;
-				color:#AAA;
+				color:#777;
 				}
 			}
 		}
@@ -663,6 +672,25 @@ img.fullwidth {
 		font-style: italic;
 		font-weight: bold;
 	}
+}
+
+.num {
+	font-family: 'Alegreya Sans', sans-serif;
+	float:right;
+	color: #fff;
+	background: linear-gradient(to top, $color, rgba($color, .35));
+	border-radius: 10px 10px 0 0;
+	padding: 0 .25em;
+	display:inline-block;
+	font-variant-numeric: tabular-nums;
+  -moz-font-feature-settings: "tnum";
+  -ms-font-feature-settings: "tnum";
+  -webkit-font-feature-settings: "tnum";
+  font-feature-settings: "tnum";
+}
+
+q {
+	font-style: italic;
 }
 
 // Print

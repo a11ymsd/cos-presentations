@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Page Structure – Accessibility &amp; Multi-Screen Design</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=680, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="styles/screen.css">
+</head>
+<body class="list">
+	<!--
+		Debug class on <body> enables
+		cyan grid on slides
+		-->
+	<header class="caption">
+		<h1>Accessibility &amp; Multi-Screen Design <br><strong>Page Structure</strong></h1>
+		<p><a href="http://yatil.net">Eric Eggert</a>, outline</p>
+	</header>
+	<section class="slide shout"><div>
+		<h2 class="small">Accessibility &amp;<br> Multi-Screen Design <strong class="section">Page Structure</strong></h2>
+	</section>
+
+  <section class="slide shout"><div>
+    <h2 class="small">Disclaimer
+    <small><br>This course is not a W3C course.<br>Views expressed are my own.</small>
+    <small><br>Dies ist kein W3C-Kurs.<br>Alle Ansichten sind meine Eigenen.</small>
+    </h2>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>What is Page Structure?</h2>
+    <p>Proper structure …</p>
+    <ul>
+      <li>
+        … makes it easier for everyone to understand content
+      </li>
+      <li>
+        … facilitates the effectiveness of users <span class="next">especially if they use assistive technologies</span>
+      </li>
+      <li>
+        … makes prioritizing and identifying content easier<span class="next">, in particular for those with congnitive and learning disabilities.</span>
+      </li>
+    </ul>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Why is this important? <span class="num">1</span></h2>
+    <ul>
+      <li><strong>People with visual impairments</strong> use the visual structure of the cues to orient themselves on the page and in the content.</li>
+      <li><strong>People using screen readers</strong> can skip to the content directly and navigate to sections that are important to them.</li>
+      <li><strong>Keyboard users</strong> will be more efficient when they are able to navigate the page bypassing some sections. If this is not possible, users need to use multiple strokes of the tab key to navigate through the links in a specific section.</li>
+    </ul>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Why is this important? <span class="num">2</span></h2>
+    <ul>
+      <li><strong>People using software that only shows the main content</strong> of a web page, such as people with cognitive disabilities, will receive better results if the page structure is correctly marked up.</li>
+      <li><strong>Mobile web users</strong> often have access to a so-called “reader” or “reading” mode that will only show the main content of the page if it is correctly marked up.</li>
+      <li><strong>People using certain browser plugins</strong> can use landmark roles to jump to specific sections on a page.</li>
+    </ul>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Why is this important? <span class="num">3</span></h2>
+    <ul>
+      <li><strong>Search engines</strong> are able to distinguish between main content and other sections of the page. They could also identify the navigation and show links to sub pages directly on the search results page.</li>
+    </ul>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Overview</h2>
+    <ul>
+      <li>Page Regions</li>
+      <li>Headings</li>
+      <li>Content Structure</li>
+      <li>Styling</li>
+      <li>In-page Navigation</li>
+    </ul>
+  </div></section>
+
+  <section class="slide cover w h"><div>
+    <iframe height='640' scrolling='no' src='http://codepen.io/yatil/embed/8a57278292865c1d30b956f1ac20badf/?height=640&theme-id=14519' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yatil/pen/8a57278292865c1d30b956f1ac20badf/'>Page structure</a> by Eric Eggert (<a href='http://codepen.io/yatil'>@yatil</a>) on <a href='http://codepen.io'>CodePen</a>.
+    </iframe>
+  </div></section>
+
+  <section class="slide shout"><div>
+    <h2>Exkurs HTML <small>(Sorry!)</small></h2>
+  </div></section>
+
+  <section class="slide shout"><div>
+    <h2>Lingua Franca</h2>
+  </div></section>
+
+  <section class="slide">
+    <div>
+      <h2>Sir Tim Berners-Lee</h2>
+      <img src="images/timbl.jpg" style="float: right;" height="320" width="480" alt="">
+      <ul>
+        <li>Inventor of the Web in 1989</li>
+        <li>Also invented HTML alongside</li>
+        <li>Founder of W3C in 1994</li>
+        <li>First proper HTML specification in 1995, HTML 2.0</li>
+      </ul>
+      <p style="clear:both;" class="note">“<a href="https://commons.wikimedia.org/wiki/File:Sir_Tim_Berners-Lee.jpg#/media/File:Sir_Tim_Berners-Lee.jpg">Sir Tim Berners-Lee</a>” by <a href="//commons.wikimedia.org/wiki/User:Paulrclarke" title="User:Paulrclarke">Paul Clarke</a> — <span class="int-own-work" lang="en">Own work</span>. Licensed under <a title="Creative Commons Attribution-Share Alike 4.0" href="http://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0</a> via <a href="//commons.wikimedia.org/wiki/">Wikimedia Commons</a>.</p>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>What is HTML?</h2>
+      <blockquote><p>Web browsers can read HTML files and render them into visible or audible web pages. Browsers do not display the HTML tags and scripts, but use them to interpret the content of the page. HTML describes the structure of a website semantically along with cues for presentation, making it a markup language, rather than a programming language.</p></blockquote>
+      <p><a href="https://en.wikipedia.org/wiki/HTML">Wikipedia</a></p>
+    </div>
+  </section>
+
+  <section class="slide cover w h"><div>
+    <h2><svg width="1016px" height="393px" viewBox="0 0 1016 393" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs></defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <text font-family="Fira Mono OT" font-size="36" font-weight="normal" fill="#fff">
+            <tspan x="0" y="220">&lt;a href="http://fh-joanneum.at"&gt;FH Joanneum&lt;/a&gt;</tspan>
+        </text>
+        <path d="M4.5,31 L1000.42871,31" stroke="#fff" stroke-width="4" stroke-linecap="square"></path>
+        <path d="M4.5,84 L681.579224,84" stroke="#fff" stroke-width="4" stroke-linecap="square"></path>
+        <path d="M67,365 L664,365" stroke="#fff" stroke-width="4" stroke-linecap="square"></path>
+        <path d="M185.962345,286 L664,286" stroke="#fff" stroke-width="4" stroke-linecap="square"></path>
+        <path d="M697,288 L930,288" stroke="#fff" stroke-width="4" stroke-linecap="square"></path>
+        <path d="M930.932446,84 L997.579224,84" stroke="#fff" stroke-width="4" stroke-linecap="square"></path>
+        <text font-family="Alegreya Sans" font-size="24" font-weight="420" fill="#fff">
+            <tspan x="468" y="22">Element</tspan>
+        </text>
+        <text font-family="Alegreya Sans" font-size="24" font-weight="420" fill="#fff">
+            <tspan x="303" y="76">Start Tag</tspan>
+        </text>
+        <path d="M4.5,31 L4.5,185.23764" stroke="#fff" stroke-width="4" stroke-linecap="square"></path>
+        <path d="M1000.5,33 L1000.5,187.23764" stroke="#fff" stroke-width="4" stroke-linecap="square"></path>
+        <path d="M683.5,83.9987892 L683.5,187.23764" stroke="#fff" stroke-width="4" stroke-linecap="square"></path>
+        <path d="M930.5,83.9987892 L930.5,187.23764" stroke="#fff" stroke-width="4" stroke-linecap="square"></path>
+        <text font-family="Alegreya Sans" font-size="24" font-weight="420" fill="#fff">
+            <tspan x="924" y="76">End Tag</tspan>
+        </text>
+        <path d="M67,229.5 L67,364.300781" stroke="#fff" stroke-width="4" stroke-linecap="square"></path>
+        <path d="M664,229.5 L664,364.300781" stroke="#fff" stroke-width="4" stroke-linecap="square"></path>
+        <path d="M182,229.5 L182,285.22477" stroke="#fff" stroke-width="4" stroke-linecap="square"></path>
+        <path d="M697,229.5 L697,285.22477" stroke="#fff" stroke-width="4" stroke-linecap="square"></path>
+        <path d="M930,229.5 L930,285.22477" stroke="#fff" stroke-width="4" stroke-linecap="square"></path>
+        <text font-family="Alegreya Sans" font-size="24" font-weight="420" fill="#fff">
+            <tspan x="322" y="386">Attribute</tspan>
+        </text>
+        <text font-family="Alegreya Sans" font-size="24" font-weight="420" fill="#fff">
+            <tspan x="382" y="307">Value</tspan>
+        </text>
+        <text font-family="Alegreya Sans" font-size="24" font-weight="420" fill="#fff">
+            <tspan x="776" y="310">Content</tspan>
+        </text>
+    </g>
+</svg></h2>
+  </div></section>
+
+    <section class="slide">
+    <div>
+      <h2>A Time Line <span class="num">1</span></h2>
+      <ul>
+        <li><strong>October 1991:</strong> <a href="http://www.w3.org/History/19921103-hypertext/hypertext/WWW/MarkUp/Tags.html">HTML Tags</a> (18 Tags)</li>
+        <li><strong>November 24, 1995:</strong> HTML 2.0, published as <a href="https://tools.ietf.org/html/rfc1866">IETF RFC 1866</a>
+          <ul>
+            <li><strong>November 25, 1995:</strong> RFC 1867 (form-based file upload)</li>
+            <li><strong>May 1996:</strong> RFC 1942 (tables)</li>
+            <li><strong>August 1996:</strong> RFC 1980 (client-side image maps)</li>
+            <li><strong>January 1997:</strong> RFC 2070 (internationalization)</li>
+          </ul>
+        </li>
+        <li><strong>January 1997:</strong> HTML 3.2, published as a <a href="http://www.w3.org/TR/REC-html32">W3C Recommendation</a></li>
+        <li><strong>December 1997:</strong> HTML 4.0, published as a <a href="http://www.w3.org/TR/REC-html40-971218/">W3C Recommendation</a></li>
+
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>A Time Line <span class="num">1</span></h2>
+      <ul>
+        <li><strong>December 1999:</strong> HTML 4.01, published as <a href="http://www.w3.org/TR/html401/">W3C Recommendation</a></li>
+        <li><strong>January 2000:</strong> XHTML 1.0, published as <a href="http://www.w3.org/TR/xhtml1/">W3C Recommendation</a></li>
+        <li><strong>May 2001:</strong> XHTML 1.1, published as <a href="http://www.w3.org/TR/xhtml11/">W3C Recommendation</a></li>
+        <li><strong>August 2002:</strong> W3C starts working on XHTML 2.0 a non-backwards compatible redefinition of XHTML</li>
+        <li><strong>June 2004:</strong> Opera + Mozilla found WHATWG to work on Web Applications 1.0</li>
+        <li><strong>May 2007:</strong> W3C adopts WHATWG’s “living standard” as the base for their HTML5 spec</li>
+        <li><strong>2009:</strong> W3C closes XHTML WG.</li>
+        <li><strong>October 2014:</strong>W3C releases HTML5 as a W3C Recommendation</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide"><div>
+    <h2>A HTML file</h2>
+    <pre><code>&lt;!DOCTYPE html&gt; <mark class="comment next">&lt;!-- document type --&gt;</mark>
+&lt;html lang="en"&gt; <mark class="comment next">&lt;!-- root element w/ language --&gt;</mark>
+  &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;  <mark class="comment next">&lt;!-- character set --&gt;</mark>
+    &lt;title&gt;My awesome website&lt;/title&gt;  <mark class="comment next">&lt;!-- title --&gt;</mark>
+  &lt;/head&gt;
+  &lt;body&gt;
+    … <mark class="comment next">&lt;!-- actual content of the page --&gt;</mark>
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+  </div></section>
+
+  <section class="slide shout"><div>
+    <h2>Ende Exkurs HTML</h2>
+  </div></section>
+
+  <section class="slide">
+    <div>
+      <iframe src="http://giphy.com/embed/Ve20ojrMWiTo4" width="480" height="269" frameBorder="0" style="max-width: 100%; display:block; margin:0 auto;" class="giphy-embed" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+    </div>
+  </section>
+
+  <section class="slide shout"><div>
+    <h2>Page Structure</h2>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Learn about:</h2>
+    <ul>
+      <li>Page Regions</li>
+      <li>Headings</li>
+      <li>Content Structure</li>
+      <li>Styling</li>
+      <li>In-page Navigation</li>
+    </ul>
+  </div></section>
+
+
+  <section class="slide shout"><div>
+    <h2>Page Regions</h2>
+  </div></section>
+
+  <section class="slide shout"><div>
+    <h2>Overall page regions</h2>
+  </div></section>
+
+  <section class="slide cover w h"><div>
+    <iframe height='640' scrolling='no' src='http://codepen.io/yatil/embed/8a57278292865c1d30b956f1ac20badf/?height=640&theme-id=14519' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/yatil/pen/8a57278292865c1d30b956f1ac20badf/'>Page structure</a> by Eric Eggert (<a href='http://codepen.io/yatil'>@yatil</a>) on <a href='http://codepen.io'>CodePen</a>.
+    </iframe>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Page Header</h2>
+    <ul>
+      <li>contains the website logo and other information, such as search or navigation options</li>
+      <li>usually on the top of the page</li>
+      <li><code>&lt;header&gt;</code> element</li>
+      <li>Default WAI-ARIA role: <code>banner</code>, if not inside of <code>&lt;article&gt;</code> or <code>&lt;section&gt;</code></li>
+    </ul>
+    <pre><code>&lt;header&gt;</code>
+  <code>&lt;img src="/images/logo.png" alt="SpaceBear Inc."&gt;</code>
+<code>&lt;/header&gt;</code></pre>
+  </div></section>
+
+  <section class="slide shout"><div>
+    <h2>WAI-ARIA <small>Accessible Rich Internet Applications</small> <iframe class="next" style="display:block; margin: 0 auto;" src="http://giphy.com/embed/SsTcO55LJDBsI?html5=true" width="480" height="360" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></h2>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>WAI-ARIA</h2>
+    <blockquote><p>… defines a way to make Web content and Web applications more accessible to people with disabilities. It especially helps with dynamic content and advanced user interface controls developed with Ajax, HTML, JavaScript, and related technologies.</p></blockquote>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>WAI-ARIA</h2>
+    <p>… helps to tell the browser what he has to tell the Accessibility APIs of the OS.</p>
+    <p><strong>Example 1:</strong> The <code>&lt;aside&gt;</code> element has a default role of <code>complementary</code>. </p>
+    <p class="next"><strong>Example 2:</strong> The <code>&lt;div aria-label="Sidebar" role="complementary"&gt;</code> has an accessible name of Sidebar and a role of <code>complementary</code>.</p>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Page Footer</h2>
+    <ul>
+      <li>has supplemental information, such as links to copyright or privacy statements, or disclaimers</li>
+      <li>usually on the bottom of the page</li>
+      <li><code>&lt;footer&gt;</code> element</li>
+      <li>Default WAI-ARIA role: <code>contentinfo</code>, if not inside of <code>&lt;article&gt;</code> or <code>&lt;section&gt;</code></li>
+    </ul>
+    <pre><code>&lt;footer&gt;
+  &lt;p&gt;&amp;copy; 2014 SpaceBears Inc.&lt;/p&gt;
+&lt;/footer&gt;
+</code></pre>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Navigation <span class="num">1</span></h2>
+    <ul>
+      <li>a collection of links</li>
+      <li>anywhere on the page</li>
+      <li>multiple times
+        <ul>
+          <li>If used multiple times, should have aria-label or aria-labelled by to label them.</li>
+        </ul>
+      </li>
+      <li><code>&lt;nav&gt;</code> element</li>
+      <li>Default WAI-ARIA role: <code>navigation</code></li>
+    </ul>
+
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Navigation <span class="num">2</span></h2>
+
+  <pre><code><span class="nt">&lt;nav</span> <span class="na">aria-label=</span><span class="s">"Main Navigation"</span><span class="nt">&gt;</span>
+  …
+<span class="nt">&lt;/nav&gt;</span>
+…
+<span class="nt">&lt;nav</span> <span class="na">aria-labelledby=</span><span class="s">"quicknav-heading"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h5</span> <span class="na">id=</span><span class="s">"quicknav-heading"</span><span class="nt">&gt;</span>
+      Quick Navigation<span class="nt">
+  &lt;/h5&gt;</span>
+  …
+<span class="nt">&lt;/nav&gt;</span></code></pre>
+</div></section>
+
+<section class="slide"><div>
+  <h2>Main Content</h2>
+  <ul>
+    <li>only one per document allowed</li>
+    <li><code>&lt;main&gt;</code> element</li>
+    <li>Default WAI-ARIA role: <code>main</code></li>
+  </ul>
+  <pre class="highlight html"><code><span class="nt">&lt;main&gt;</span>
+  <span class="nt">&lt;h1&gt;</span>Stellar launch weekend for the SpaceBear 7!<span class="nt">&lt;/h1&gt;</span>
+  …
+<span class="nt">&lt;/main&gt;</span></code>
+</pre>
+</div></section>
+
+<section class="slide"><div>
+  <h2>Complementary content</h2>
+  <ul>
+    <li>supports the main content but can be used on its own as well</li>
+    <li><code>&lt;aside&gt;</code> element</li>
+    <li>Default WAI-ARIA role: <code>complementary</code></li>
+  </ul>
+  <pre class="highlight html"><code><span class="nt">&lt;aside&gt;</span>
+  <span class="nt">&lt;h3&gt;</span>Related Articles<span class="nt">&lt;/h3&gt;</span>
+  …
+<span class="nt">&lt;/aside&gt;</span></code></pre>
+</div></section>
+
+<section class="slide"><div>
+  <h2>Search tool</h2>
+  <ul>
+    <li>No dedicated HTML element</li>
+    <li>WAI-ARIA role: <code>search</code></li>
+  </ul>
+  <pre class="highlight html"><code><span class="nt">&lt;form</span> <span class="na">action=</span><span class="s">"…"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">role=</span><span class="s">"search"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"search"</span> <span class="na">aria-label=</span><span class="s">"Search"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"submit"</span><span class="nt">&gt;</span>Search<span class="nt">&lt;/button&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/form&gt;</span></code></pre>
+</div></section>
+
+  <section class="slide shout"><div>
+    <h2>In-page regions</h2>
+  </div></section>
+
+  <section class="slide"><div>
+  <h2>Sections</h2>
+  <ul>
+    <li>marks a general region on the page or inside an article</li>
+    <li><code>&lt;section&gt;</code> element</li>
+    <li>Default WAI-ARIA role: <code>region</code></li>
+  </ul>
+  <pre class="highlight html"><code>&lt;section&gt;
+  &lt;h2&gt;Chapter 2&lt;/h2&gt;
+  …
+&lt;/section&gt;</code>
+</pre>
+</div></section>
+
+<section class="slide"><div>
+  <h2>Articles <span class="num">1</span></h2>
+  <ul>
+    <li>represents a complete, or self-contained, composition in a document, page, application, or site and that is, in principle, independently distributable or reusable</li>
+    <li><code>&lt;article&gt;</code> element</li>
+    <li>Default WAI-ARIA role: <code>article</code></li>
+  </ul>
+</div></section>
+
+<section class="slide"><div>
+  <h2>Articles <span class="num">2</span></h2>
+<pre class="highlight html"><code>&lt;article&gt;
+  &lt;h2&gt;Space Bear Classic&lt;/h2&gt;
+  …
+&lt;/article&gt;
+&lt;article&gt;
+  &lt;h2&gt;Space Bear Extrem&lt;/h2&gt;
+  …
+&lt;/article&gt;</code>
+</pre>
+</div></section>
+
+  <section class="slide shout"><div>
+    <h2>Headings</h2>
+  </div></section>
+
+<section class="slide"><div>
+  <h2>Heading structure in content</h2>
+  <pre><code>&lt;h1&gt;An inside look at the new SpaceBear 8&trade;&lt;/h1&gt;
+  &lt;h2&gt;Cotton Fur&lt;/h2&gt;
+  &lt;h2&gt;Sapphire Eyes&lt;/h2&gt;
+  &lt;h2&gt;Synthetic Felt Paws&lt;/h2&gt;</code></pre>
+</div></section>
+
+<section class="slide"><div>
+  <h2>Heading structure to organize sections <span class="num">1</span></h2>
+  <pre class="small"><code>&lt;h1&gt;SpaceTeddy Inc.&lt;/h1&gt;
+  &lt;h2&gt;Navigation&lt;/h2&gt;
+  &lt;h2&gt;Sidebar&lt;/h2&gt;
+    &lt;h3&gt;More news&lt;/h3&gt;
+    &lt;h3&gt;What our clients say&lt;/h3&gt;
+    &lt;h3&gt;Ratings&lt;/h3&gt;
+  &lt;h2&gt;An inside look at the new SpaceBear 8&trade;&lt;/h2&gt;
+    &lt;h3&gt;Cotton Fur&lt;/h3&gt;
+    &lt;h3&gt;Saphire Eyes&lt;/h3&gt;
+    &lt;h3&gt;Syntetic Felt Paws&lt;/h3&gt;
+  &lt;h2&gt;Footer&lt;/h2&gt;
+    &lt;h3&gt;About the company&lt;/h3&gt;
+    &lt;h3&gt;Our retail stores&lt;/h3&gt;</code></pre>
+</div></section>
+
+<section class="slide"><div>
+  <h2>Heading structure to organize sections <span class="num">2</span></h2>
+  <pre class="small"><code>  &lt;h2&gt;Navigation&lt;/h2&gt;
+  &lt;h2&gt;Sidebar&lt;/h2&gt;
+    &lt;h3&gt;More news&lt;/h3&gt;
+    &lt;h3&gt;What our clients say&lt;/h3&gt;
+    &lt;h3&gt;Ratings&lt;/h3&gt;
+&lt;h1&gt;An inside look at the new SpaceBear 8&trade;&lt;/h1&gt;
+  &lt;h2&gt;Cotton Fur&lt;/h2&gt;
+  &lt;h2&gt;Saphire Eyes&lt;/h2&gt;
+  &lt;h2&gt;Syntetic Felt Paws&lt;/h2&gt;
+  &lt;h2&gt;Footer&lt;/h2&gt;
+    &lt;h3&gt;About the company&lt;/h3&gt;
+    &lt;h3&gt;Our retail stores&lt;/h3&gt;</code></pre>
+</div></section>
+
+  <section class="slide shout"><div>
+    <h2>Content Structure</h2>
+  </div></section>
+
+  <section class="slide"><div>
+  <h2>&lt;p&gt;</h2>
+  <p>Add rhythm and lightness to content using paragraph element (&lt;p&gt;). Consistent styling of paragraphs improves text readability. Paragraph styling can be altered by applying user stylesheets that adapt for specific needs.</p>
+</div></section>
+
+<section class="slide"><div>
+  <h2>Lists: Unordered</h2>
+<ul style="float:left;">
+  <li>Corn</li>
+  <li>Tomatoes</li>
+  <li>Beans</li>
+  <li>Onions</li>
+  <li>Garlic</li>
+</ul>
+  <pre style="float:right;"><code>&lt;ul&gt;
+  &lt;li&gt;Corn&lt;/li&gt;
+  &lt;li&gt;Tomatoes&lt;/li&gt;
+  &lt;li&gt;Beans&lt;/li&gt;
+  &lt;li&gt;Onions&lt;/li&gt;
+  &lt;li&gt;Garlic&lt;/li&gt;
+  &amp;hellip;
+&lt;/ul&gt;</code></pre>
+</div></section>
+
+<section class="slide"><div>
+  <h2>Lists: Ordered <span class="num">1</span></h2>
+<ol>
+    <li>Cook beans for 45 minutes.</li>
+    <li>Cut vegetables in small cubes.</li>
+    <li>Sauté onions and garlic.</li>
+    <li>Deglaze using the tomatoes.</li>
+    <li>Add corn and beans.</li>
+</ol>
+</div></section>
+
+<section class="slide"><div>
+  <h2>Lists: Ordered <span class="num">2</span></h2>
+  <pre><code>&lt;ol&gt;
+  &lt;li&gt;Cook beans for 45 minutes.&lt;/li&gt;
+  &lt;li&gt;Cut vegetables in small cubes.&lt;/li&gt;
+  &lt;li&gt;Saut&eacute; onions and garlic.&lt;/li&gt;
+  &lt;li&gt;Deglaze using the tomatoes.&lt;/li&gt;
+  &lt;li&gt;Add corn and beans.&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+</div></section>
+
+<section class="slide"><div>
+  <h2>Lists: Nested <span class="num">1</span></h2>
+  <ol>
+    <li>
+        Prepare ingredients
+        <ul>
+            <li>Cook beans for 45 minutes.</li>
+            <li>Cut vegetables in small cubes.</li>
+        </ul>
+    </li>
+    <li>Sauté onions and garlic.</li>
+    <li>Deglaze using the tomatoes.</li>
+    <li>Add corn and beans.</li>
+</ol>
+</div></section>
+
+<section class="slide"><div>
+  <h2>Lists: Nested <span class="num">2</span></h2>
+  <pre><code>&lt;ol&gt;
+  &lt;li&gt;Prepare ingredients
+    &lt;ul&gt;
+      &lt;li&gt;Cook beans for 45 minutes.&lt;/li&gt;
+      &lt;li&gt;Cut vegetables in small cubes.&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Saut&eacute; onions and garlic.&lt;/li&gt;
+  &lt;li&gt;Deglaze using the tomatoes.&lt;/li&gt;
+  &lt;li&gt;Add corn and beans.&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+</div></section>
+
+<section class="slide"><div>
+  <h2>Quotes <span class="num">1</span></h2>
+  <blockquote>
+    <p>This is a blockquote! Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat.</p><p>Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur.</p>
+  </blockquote>
+  <p class="next">This is some text and then there is <q>an inline quote</q> from a famous person.</p>
+</div></section>
+
+<section class="slide"><div>
+  <h2>Quotes <span class="num">2</span></h2>
+<pre><code>&lt;blockquote&gt;
+  &lt;p&gt;…&lt;/p&gt;&lt;p&gt;…&lt;/p&gt;
+&lt;/blockquote&gt;</code></pre>
+  <pre class="next"><code>&lt;p&gt;This is some text and then there is
+  &lt;q&gt;an inline quote&lt;/q&gt; from a famous person.&lt;/p&gt;</code></pre>
+</div></section>
+
+<section class="slide"><div>
+  <h2>Figures <span class="num">1</span></h2>
+  <p>Figures associate captions with lists, images, tables, and other content. For example an annual report could reference to a diagram containing the sales volumes of a product. Related content is wrapped in a &lt;figure&gt; element, a &lt;figcaption&gt; element is added to describe the content.</p>
+</div></section>
+
+<section class="slide"><div>
+  <h2>Figures <span class="num">2</span></h2>
+<pre class="highlight html"><code><span class="nt">&lt;figure</span> <span class="na">role=</span><span class="s">"group"</span> <span class="na">aria-labelledby=</span><span class="s">"fig-t3-capt"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;figcaption</span> <span class="na">id=</span><span class="s">"fig-t3-capt"</span><span class="nt">&gt;</span>G3: SpaceBear sales volume
+  <span class="nt">&lt;/figcaption&gt;</span>
+  <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"…"</span>
+    <span class="na">alt=</span><span class="s">"SpaceBear sales diagram,
+         showing the huge success in Q4"</span>
+    <span class="na">longdesc=</span><span class="s">"…"</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"…"</span><span class="nt">&gt;</span>Long Description<span class="nt">&lt;/a&gt;</span>
+<span class="nt">&lt;/figure&gt;</span></code>
+</pre>
+</div></section>
+
+<section class="slide shout"><div>
+  <h2>Styling</h2>
+</div></section>
+
+<section class="slide"><div>
+  <h2>Styling</h2>
+  <ul>
+    <li><strong>font size:</strong> Keep readable size, use <code>em</code>, <code>rem</code> or <code>%</code> units</li>
+    <li><strong>line height:</strong> Too little space and too much space make content unreadable, is dependent on the chosen font, usually between 1.3 and 1.75.</li>
+    <li><strong>text alignment:</strong> Align text to the left (in left to right languages), avoid using right aligned, centered or justified body text.</li>
+    <li><strong>line length:</strong> Aim for a maximum line length of 80 characters</li>
+    <li><strong>highlighting:</strong> Use the HTML5 <code>&lt;mark&gt;</code> element to semantically highlight text</li>
+  </ul>
+</div></section>
+
+<section class="slide shout"><div>
+  <h2>In-page navigation</h2>
+</div></section>
+
+<section class="slide"><div>
+  <h2>In-page navigation</h2>
+  <ul>
+    <li>Add <code>id</code> attributes to elements or headings on the page</li>
+    <li>Use <strong>skip links</strong> to allow users to jump to certain parts of the page</li>
+    <li>Provide a <strong>table of contents</strong> that can help users to find the content.</li>
+  </ul>
+  <p><strong>We will talk about navigation on Friday…</strong></p>
+</div></section>
+
+<section class="slide shout"><div>
+  <h2 class="loud"><em>fin.</em></h2>
+</div></section>
+
+<!--
+  <section class="slide"><div>
+    <h2>Numbered code listing</h2>
+    <pre>
+      <code>&lt;html lang="en"&gt;</code>
+      <code><mark>&lt;head&gt;</mark> <mark class="comment">&lt;!--Comment--&gt;</mark></code>
+      <code>  &lt;title&gt;Shower&lt;/title&gt;</code>
+      <code>  &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
+      <code>  &lt;link rel="stylesheet" href="s/screen.css"&gt;</code>
+      <code>  &lt;script src="j/jquery.js"&gt;&lt;/script&gt;</code>
+      <code><mark>&lt;/head&gt;</mark></code>
+    </pre>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Plain code listing</h2>
+    <pre><code>&lt;html lang="en"&gt;
+<mark>&lt;head&gt;</mark> <mark class="comment">&lt;!--Comment--&gt;</mark>
+  &lt;title&gt;Shower&lt;/title&gt;
+  &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;
+  &lt;link rel="stylesheet" href="s/screen.css"&gt;
+  &lt;script src="j/jquery.js"&gt;&lt;/script&gt;
+<mark>&lt;/head&gt;</mark></code></pre>
+  </div></section>
+  -->
+
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+  <div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+  <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+	<!-- Copyright © 2014 Yours Truly, Famous Inc. -->
+</body>
+</html>
