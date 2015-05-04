@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Menus – Accessibility &amp; Multi-Screen Design</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=680, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="styles/screen.css">
+</head>
+<body class="list">
+	<!--
+		Debug class on <body> enables
+		cyan grid on slides
+		-->
+	<header class="caption">
+		<h1>Accessibility &amp; Multi-Screen Design <br><strong>Menus</strong></h1>
+		<p><a href="http://yatil.net">Eric Eggert</a>, outline</p>
+	</header>
+	<section class="slide shout"><div>
+		<h2 class="small">Accessibility &amp;<br> Multi-Screen Design <strong class="section">Menus</strong></h2>
+	</section>
+
+  <section class="slide shout"><div>
+    <h2 class="small">Disclaimer
+    <small><br>This course is not a W3C course.<br>Views expressed are my own.</small>
+    <small><br>Dies ist kein W3C-Kurs.<br>Alle Ansichten sind meine Eigenen.</small>
+    </h2>
+  </div></section>
+
+    <section class="slide"><div>
+    <h2>Overview</h2>
+    <ul>
+      <li>Menus
+        <ul>
+          <li>Markup</li>
+          <li>Styling</li>
+          <li>
+            Menu Examples
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div></section>
+
+  <section class="slide shout"><div>
+    <blockquote><p>Menus are used to browse around websites (“navigation menus”) or initiate actions inside a web page (“application menus”).</p></blockquote>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Why is this important? <span class="num">1</span></h2>
+    <ul>
+      <li>Navigation menus reflect the underlying structure of a website’s content.</li>
+      <li>Helps users to find what they are looking for.</li>
+      <li><strong>Screen reader and keyboard users</strong> should be aware which link is currently in focus. The menu link to the page the user is currently on should be indicated as well.
+      </li>
+      <li><strong>Screen reader users</strong> expect web application menus to work like desktop menus.
+      </li>
+      <li><strong>Users with fine motor difficulties and touch screen users</strong> need large targets to click or tap on.
+      </li>
+    </ul>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Why is this important? <span class="num">2</span></h2>
+    <ul>
+      <li><strong>Users with shaky hands</strong> need fly-out menus to not disappear immediately after the mouse has left the submenu.
+      </li>
+      <li><strong>People with attention limitations, short term memory limitations, or limitations in executive processes</strong> benefit by being able to discover where the focus is located.
+      </li>
+    </ul>
+  </div></section>
+
+ <section class="slide"><div>
+    <h2>Markup</h2>
+    <pre>
+      <code>&lt;nav aria-label=&quot;Main Menu&quot;&gt;</code>
+      <code>  &lt;ul&gt;</code>
+      <code>    &lt;li&gt;&lt;a href=&quot;&hellip;&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;</code>
+      <code>    &lt;li&gt;&lt;a href=&quot;&hellip;&quot;&gt;Shop&lt;/a&gt;&lt;/li&gt;</code>
+      <code>    &lt;li&gt;&lt;a href=&quot;&hellip;&quot;&gt;SpaceBears&lt;/a&gt;&lt;/li&gt;</code>
+      <code>    &lt;li&gt;&lt;a href=&quot;&hellip;&quot;&gt;MarsCars&lt;/a&gt;&lt;/li&gt;</code>
+      <code>    &lt;li&gt;&lt;a href=&quot;&hellip;&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;</code>
+      <code>  &lt;/ul&gt;</code>
+      <code>&lt;/nav&gt;</code>
+    </pre>
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Styling → Vertical menu</h2>
+    <img src="pictures/menu-vertical.png" alt="">
+  </div></section>
+
+  <section class="slide"><div>
+    <h2>Styling → Horizontal menu</h2>
+    <img src="pictures/menu-horizontal.png" alt="">
+  </div></section>
+
+  <section class="slide shout"><div>
+    <h2>Brave new world:<br>Menus 2.0</h2>
+  </div></section>
+
+  <section class="slide  cover w h">
+    <div>
+      <iframe src="http://bradfrost.com/demo/ish/?url=http%3A%2F%2Fstarbucks.com#s" frameborder="0"></iframe>
+    </div>
+  </section>
+
+  <section class="slide  cover w h">
+    <div>
+      <iframe src="http://bradfrost.com/demo/ish/?url=http%3A%2F%2Fwww.porsche.com%2Fusa%2F#s" frameborder="0"></iframe>
+    </div>
+  </section>
+
+  <section class="slide  cover w h">
+    <div>
+      <iframe src="http://bradfrost.com/demo/ish/?url=http%3A%2F%2Fwww.theguardian.com%2Fuk#s" frameborder="0"></iframe>
+    </div>
+  </section>
+
+  <section class="slide  cover w h">
+    <div>
+      <iframe src="http://bradfrost.com/demo/ish/?url=http%3A%2F%2Fwww.bbc.co.uk%2Fnews#s" frameborder="0"></iframe>
+    </div>
+  </section>
+
+  <section class="slide  cover w h">
+    <div>
+      <iframe src="http://bradfrost.com/demo/ish/?url=http%3A%2F%2Fwww.bostonglobe.com#s" frameborder="0"></iframe>
+    </div>
+  </section>
+
+  <section class="slide  cover w h">
+    <div>
+      <iframe src="http://bradfrost.com/demo/ish/?url=http%3A%2F%2Fstuffandnonsense.co.uk%2F#s" frameborder="0"></iframe>
+    </div>
+  </section>
+
+  <section class="slide shout">
+    <div>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:block; margin: 0 auto;max-height:100%;" viewBox="0 0 16 16"><title>“Hamburger” Menu Icon</title>
+        <path fill="#fff" d="M1 3h14v3h-14zM1 7h14v3h-14zM1 11h14v3h-14z"></path>
+      </svg>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>The Problems</h2>
+      <ul>
+        <li>Lower Discoverability</li>
+        <li>Less Efficient</li>
+        <li>Clash with Platform Navigation Patterns</li>
+        <li>Not Glanceable</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide shout">
+    <div>
+      <h2>Out of Sight,<br>Out of Mind</h2>
+    </div>
+  </section>
+
+  <section class="slide cover h"><div>
+    <img src="pictures/foursquare-menu.gif" alt="">
+  </div></section>
+
+  <section class="slide cover h"><div>
+    <img src="pictures/twitter-instant-navigation.gif" alt="">
+  </div></section>
+
+  <section class="slide cover w"><div>
+    <img src="pictures/IMDB-NavBar.png" alt="">
+  </div></section>
+
+  <section class="slide cover w"><div>
+    <img src="pictures/jawbone-up.png" alt="">
+    <img class="next" src="pictures/twitter-tabbar-notifications.png" alt="">
+  </div></section>
+
+  <section class="slide cover h"><div>
+    <img src="pictures/airbnb_redesign.svg" alt="" style="background-color: #fff;">
+  </div></section>
+
+  <section class="slide cover h"><div>
+    <img src="pictures/rookie-scrolling-toolbar.gif" alt="">
+  </div></section>
+
+  <section class="slide cover w h"><div>
+    <video src="videos/rubyconfpt.mp4" controls></video>
+  </div></section>
+
+  <section class="slide cover w h"><div>
+    <video src="videos/sutton-slide-menu.mp4" controls></video>
+  </div></section>
+
+  <section class="slide cover w h"><div>
+    <video src="videos/craighospital.mp4" controls></video>
+  </div></section>
+
+  <section class="slide">
+    <div>
+      <h2>Take Aways</h2>
+      <ul>
+        <li>Make your navigation obvious</li>
+        <li>Indicate where users are</li>
+        <li>Be consistent</li>
+        <li>Enable glancing at information</li>
+        <li>Always use words with icons</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide shout"><div>
+    <h2 class="loud"><em>fin.</em></h2>
+  </div></section>
+
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+  <div class="progress"><div></div></div>
+	<script src="shower/shower.min.js"></script>
+  <script async src="http://assets.codepen.io/assets/embed/ei.js"></script>
+	<!-- Copyright © 2014 Yours Truly, Famous Inc. -->
+</body>
+</html>
