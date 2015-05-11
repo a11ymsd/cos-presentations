@@ -287,8 +287,9 @@ a {
 		z-index:1;
 		&:after {
 			content:'';
-			}
 		}
+		a { color: #fff;}
+	}
 	// Cover
 	&.cover {
 		background:#000;
@@ -373,7 +374,7 @@ a {
 		blockquote {
 			font-style:italic;
 			color: #fff;
-			font-size: 80px;
+			font-size: 70px;
 			line-height: 1;
 			position:relative;
 			em {
