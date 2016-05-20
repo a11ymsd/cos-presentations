@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Images – Accessibility &amp; Multi-Screen Design</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=680, user-scalable=no">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="styles/screen.css">
+  <style>
+  #RWDantwortauf2 svg {
+    fill: #fff;
+    margin: .25em;
+  }
+  #RWDantwortauf2 h2 {
+    display: flex;
+  }
+
+#invisibleperformance h2 strong {
+    color: #164C8B;
+    text-shadow: 0 0 10px rgba(120,120,120,1);
+}
+  </style>
+</head>
+<body class="list">
+	<!--
+		Debug class on <body> enables
+		cyan grid on slides
+		-->
+	<header class="caption">
+		<h1>Accessibility &amp; Multi-Screen Design <br><strong>Images</strong></h1>
+		<p><a href="http://yatil.net">Eric Eggert</a>, outline</p>
+	</header>
+	<section class="slide shout"><div>
+		<h2 class="small">Accessibility &amp;<br> Multi-Screen Design <strong class="section">Images</strong></h2>
+	</div></section>
+
+  <section class="slide shout"><div>
+    <h2 class="small">Disclaimer
+    <small><br>This course is not a W3C course.<br>Views expressed are my own.</small>
+    <small><br>Dies ist kein W3C-Kurs.<br>Alle Ansichten sind meine Eigenen.</small>
+    </h2>
+  </div></section>
+
+
+<section class="slide">
+    <div>
+      <header>
+        <h2>Overview</h2>
+      </header>
+      <ul>
+        <li>Definitions</li>
+        <li>The <code>&lt;img&gt;</code> element
+          <ul>
+            <li><code>alt</code> attribute</li>
+            <li><code>srcset</code> display density</li>
+            <li><code>srcset</code> width descriptors</li>
+            <li><code>sizes</code></li>
+          </ul>
+        </li>
+        <li>The <code>&lt;picture&gt;</code> element
+          <ul>
+            <li><code>type</code></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+
+<section class="slide shout">
+  <div>
+      <h2>Definitions</h2>
+  </div>
+</section>
+
+<section class="slide cover w">
+    <div>
+<img src="https://www.apple.com/v/watch/d/home/images/hero_ygold_edition_large_2x.jpg">
+    </div>
+  </section>
+
+  <section class="slide cover">
+    <div>
+<img src="https://www.apple.com/v/watch/d/home/images/hero_ygold_edition_large_2x.jpg" style="transform: translate(-50%, -50%);">
+    </div>
+  </section>
+
+<section class="slide">
+    <div>
+      <header>
+        <h2>This Image</h2>
+      </header>
+      <ul>
+        <li>Size: 5144&times;1698px</li>
+        <li class="next">&gt;11 1024&times;768px monitors!</li>
+        <li>410kb on disk</li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section class="slide cover">
+    <div style="background-color: #fff;">
+<img src="http://us.blackberry.com/content/blackberry_com/desktop/north_america/en_us/devices/smartphones/blackberry-curve-9310/phone-specifications/_jcr_content/par_pageBody/bbcom_desktop_smartp/featuresColumnCenter/bbcom_common_global_.img.jpg/1357754189847.jpg" style="top:50%; left:50%; transform: translate(-50%, -50%);">
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <header>
+        <h2>Blackberry Curve</h2>
+      </header>
+      <ul>
+        <li>Resolution: 320&times;240px @ 164ppi</li>
+        <li class="next">&gt;113 phones needed to display the high res image</li>
+      </ul>
+    </div>
+  </section>
+
+<section class="slide shout">
+  <div>
+      <h2>Two main <br>  use cases<br><br><small><a href="http://usecases.responsiveimages.org/">More as defined by the Responsive Images Community Group</a></small></h2>
+  </div>
+</section>
+
+<section class="slide shout">
+  <div>
+      <h2>Resolution and density switching</h2>
+  </div>
+</section>
+
+<section class="slide cover w">
+    <div>
+<img src="http://3w7ov13ob0hk2kk1w147yffjlu5.wpengine.netdna-cdn.com/wp-content/uploads/2015/03/resolution-switching.jpg">
+    </div>
+  </section>
+
+<section class="slide shout">
+  <div>
+      <h2>Art direction</h2>
+  </div>
+</section>
+
+<section class="slide cover w">
+    <div>
+<img src="http://3w7ov13ob0hk2kk1w147yffjlu5.wpengine.netdna-cdn.com/wp-content/uploads/2012/05/obama-500.jpg">
+    </div>
+  </section>
+
+  <section class="slide cover">
+    <div style="background-color: #fff;">
+<img src="http://3w7ov13ob0hk2kk1w147yffjlu5.wpengine.netdna-cdn.com/wp-content/uploads/2012/05/obama-100.jpg" style="top:50%; left:50%; transform: translate(-50%, -50%);">
+    </div>
+  </section>
+
+  <section class="slide cover">
+    <div style="background-color: #fff;">
+<img src="http://3w7ov13ob0hk2kk1w147yffjlu5.wpengine.netdna-cdn.com/wp-content/uploads/2012/05/obama-100-art.jpg" style="top:50%; left:50%; transform: translate(-50%, -50%);">
+    </div>
+  </section>
+
+  <section class="slide cover w h">
+    <div>
+      <iframe src="https://www.youtube-nocookie.com/embed/ZHBqNnhvMug" allowfullscreen="" frameborder="0"></iframe>
+    </div>
+  </section>
+
+  <section class="slide shout">
+    <div>
+        <h2>The <code>img</code> element</h2>
+    </div>
+  </section>
+
+<section class="slide code">
+  <div>
+    <pre><code>&lt;img src="cat-image.jpg" alt="Cute cat image"></code></pre>
+  </div>
+</section>
+
+<section class="slide shout">
+  <div>
+      <h2>The <code>alt</code> attribute</h2>
+  </div>
+</section>
+
+<section class="slide">
+  <div>
+    <p>The alternative text (<code>alt</code>) describes an image in a way that the purpose or content of the image is clear without seeing the image.</p>
+  </div>
+</section>
+
+<section class="slide">
+  <div>
+    <h2>Decision Tree</h2>
+  </div>
+</section>
+
+<section class="slide">
+    <div>
+      <h2>Does the image contain text?</h2>
+    <ul class="decision-tree">
+      <li class="yes"><strong>Yes:</strong>
+        <ul>
+          <li><strong>… and the text in the image is also present as <em>real</em> text nearby.</strong>
+<em>Use an empty <code>alt</code> attribute. See <a href="http://w3c.github.io/wai-tutorials/decorative/">Decorative Images</a>.</em></li>
+          <li><strong>… and the text is only shown for visual effects.</strong>
+<em>Use an empty <code>alt</code> attribute. See <a href="http://w3c.github.io/wai-tutorials/decorative/">Decorative Images</a>.</em></li>
+          <li><strong>… and the text in the image is not present otherwise.</strong> <em>Use the <code>alt</code> attribute to include the text of the image. See <a href="http://w3c.github.io/wai-tutorials/textual/#image-of-styled-text-with-decorative-effect">Images of Text</a>.</em></li>
+        </ul>
+      </li>
+      <li class="no"><strong>No:</strong>
+        <ul>
+          <li>Continue.</li>
+        </ul>
+      </li>
+    </ul>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Is the image used in a link or a button, and would it be hard or impossible to understand what the link or the button does, if the image wasn’t there?</h2>
+    <ul class="decision-tree">
+      <li class="yes"><strong>Yes:</strong>
+        <ul>
+          <li><em>Use the <code>alt</code> attribute to communicate the destination of the link or action taken. See <a href="http://w3c.github.io/wai-tutorials/functional/">Functional Images</a>.</em></li>
+        </ul>
+      </li>
+      <li class="no"><strong>No:</strong>
+        <ul>
+          <li>Continue.</li>
+        </ul>
+      </li>
+    </ul>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Does the image contribute meaning to the current page or context?</h2>
+    <ul class="decision-tree">
+      <li class="yes"><strong>Yes:</strong>
+        <ul>
+          <li><strong>… and it’s a simple graphic or photograph.</strong><em>Use a brief description of the image in a way that conveys that meaning in the <code>alt</code> attribute. See <a href="http://w3c.github.io/wai-tutorials/informative/">Informative Images</a>.</em></li>
+          <li><strong>… and it’s a graph or complex piece of information.</strong><em>Include the information contained in the image elsewhere on the page. See <a href="http://w3c.github.io/wai-tutorials/complex/">Complex Images</a>.</em></li>
+          <li><strong>… and it shows content that is redundant to <em>real</em> text nearby.</strong>
+<em>Use an empty <code>alt</code> attribute. See <a href="http://w3c.github.io/wai-tutorials/functional/#logo-image-within-link-text">Functional Images</a>.</em></li>
+        </ul>
+      </li>
+      <li class="no"><strong>No:</strong>
+        <ul>
+          <li>Continue.</li>
+        </ul>
+      </li>
+    </ul>
+    </div>
+  </section>
+
+  <section class="slide">
+    <div>
+      <h2>Is the image purely decorative or not intended for the user?</h2>
+    <ul class="decision-tree">
+      <li class="yes"><strong>Yes:</strong>
+        <ul>
+          <li><em>Use an empty <code>alt</code> attribute. See <a href="http://w3c.github.io/wai-tutorials/decorative/">Decorative Images</a>.</em></li>
+        </ul>
+      </li>
+      <li class="no"><strong>No:</strong>
+        <ul>
+          <li>Continue.</li>
+        </ul>
+      </li>
+    </ul>
+    </div>
+  </section>
+
+  <section class="slide shout">
+    <div>
+        <h2>The <code>img</code> element is the basis of everything responsive images</h2>
+    </div>
+  </section>
+
+  <section class="slide cover w">
+    <div>
+<img src="http://3w7ov13ob0hk2kk1w147yffjlu5.wpengine.netdna-cdn.com/wp-content/uploads/2015/03/img-required.png">
+    </div>
+  </section>
+
+<section class="slide">
+    <div>
+      <header>
+        <h2>When do you need only a simple img?</h2>
+      </header>
+      <ul>
+        <li>A fixed width, single density web page</li>
+        <li>Small differences in file size</li>
+        <li>Using vector-based images like <a href="http://en.wikipedia.org/wiki/Scalable_Vector_Graphics">SVG</a></li>
+      </ul>
+    </div>
+  </section>
+
+<section class="slide shout">
+  <div>
+      <h2>High density images</h2>
+  </div>
+</section>
+
+<section class="slide shout">
+  <div>
+      <h2>ppi = pixel per inch</h2>
+  </div>
+</section>
+
+<section class="slide">
+    <div>
+      <header>
+        <h2>Types of resolutions</h2>
+      </header>
+      <ul>
+        <li><strong>The old days (and still some PCs today):</strong> 96/72ppi</li>
+        <li><strong>iPhone 1-3GS:</strong> 320&times;480px @ ~165ppi</li>
+        <li><strong>iPhone 4 & 4s:</strong> 640&times;960px @ ~330ppi</li>
+        <li><strong>iPhone 5 & 5s:</strong> 640&times;1136px @ ~326ppi</li>
+        <li><strong>iPhone 6:</strong> 750&times;1334px @ ~326ppi</li>
+        <li><strong>iPhone 6 Plus:</strong> 1080&times;1920px @ ~401ppi</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="slide shout"><div>
+    <h2 class="loud"><em>fin.</em></h2>
+  </div></section>
+	<!--
+		To hide progress bar from entire presentation
+		just remove “progress” element.
+		-->
+  <div class="progress"><div></div></div>
+  <svg viewBox="0 0 25 32" style="display:none;">
+    <g id="Apple">
+      <path d="M24.875 21.696q-0.696 2.232-2.196 4.464-2.304 3.5-4.589 3.5-0.875 0-2.5-0.571-1.536-0.571-2.696-0.571-1.089 0-2.536 0.589-1.446 0.607-2.357 0.607-2.714 0-5.375-4.625-2.625-4.661-2.625-8.982 0-4.071 2.018-6.679 2-2.571 5.071-2.571 1.286 0 3.161 0.536 1.857 0.536 2.464 0.536 0.804 0 2.554-0.607 1.821-0.607 3.089-0.607 2.125 0 3.804 1.161 0.929 0.643 1.857 1.786-1.411 1.196-2.036 2.107-1.161 1.679-1.161 3.696 0 2.214 1.232 3.982t2.821 2.25zM18.161 0.75q0 1.089-0.518 2.429-0.536 1.339-1.661 2.464-0.964 0.964-1.929 1.286-0.661 0.196-1.857 0.304 0.054-2.661 1.393-4.589 1.321-1.911 4.464-2.643 0.018 0.054 0.045 0.196t0.045 0.196q0 0.071 0.009 0.179t0.009 0.179z" />
+    </g>
+    <g id="Android">
+      <path d="M8.804 8.625q0.286 0 0.491-0.205t0.205-0.491-0.205-0.491-0.491-0.205-0.482 0.205-0.196 0.491 0.196 0.491 0.482 0.205zM16.339 8.625q0.286 0 0.482-0.205t0.196-0.491-0.196-0.491-0.482-0.205-0.491 0.205-0.205 0.491 0.205 0.491 0.491 0.205zM1.839 11.911q0.75 0 1.286 0.536t0.536 1.286v7.679q0 0.768-0.527 1.304t-1.295 0.536-1.304-0.536-0.536-1.304v-7.679q0-0.75 0.536-1.286t1.304-0.536zM20.768 12.25v11.893q0 0.821-0.571 1.393t-1.375 0.571h-1.339v4.054q0 0.768-0.536 1.304t-1.304 0.536-1.304-0.536-0.536-1.304v-4.054h-2.464v4.054q0 0.768-0.536 1.304t-1.304 0.536q-0.75 0-1.286-0.536t-0.536-1.304l-0.018-4.054h-1.321q-0.821 0-1.393-0.571t-0.571-1.393v-11.893h16.393zM16.625 5.018q1.911 0.982 3.054 2.741t1.143 3.848h-16.518q0-2.089 1.143-3.848t3.071-2.741l-1.268-2.339q-0.125-0.232 0.089-0.357 0.232-0.107 0.357 0.107l1.286 2.357q1.696-0.75 3.589-0.75t3.589 0.75l1.286-2.357q0.125-0.214 0.357-0.107 0.214 0.125 0.089 0.357zM25.143 13.732v7.679q0 0.768-0.536 1.304t-1.304 0.536q-0.75 0-1.286-0.536t-0.536-1.304v-7.679q0-0.768 0.536-1.295t1.286-0.527q0.768 0 1.304 0.527t0.536 1.295z" />
+    </g>
+    <g id="Windows">
+      <path d="M12.179 17.964v11.625l-12.179-1.679v-9.946h12.179zM12.179 4.696v11.768h-12.179v-10.089zM29.714 17.964v14.036l-16.196-2.232v-11.804h16.196zM29.714 2.286v14.179h-16.196v-11.946z" />
+    </g>
+  </svg>
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2014 Yours Truly, Famous Inc. -->
+</body>
+</html>
