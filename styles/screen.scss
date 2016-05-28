@@ -1,3 +1,4 @@
+html {content:"123";}
 // Bright theme for Shower HTML presentation engine: github.com/shower/shower
 // Copyright © 2010–2014 Vadim Makeev, pepelsbey.net
 // Licensed under MIT license: github.com/shower/shower/wiki/MIT-License
@@ -5,6 +6,8 @@
 @import 'defaults';
 @import 'fonts';
 @import 'reset';
+
+.frac {font-feature-settings: "frac";}
 
 body {
 	counter-reset:slide;
