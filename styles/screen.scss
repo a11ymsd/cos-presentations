@@ -13,6 +13,8 @@ body {
 	counter-reset:slide;
 	font:24px/2 'Ulises', serif;
 	-moz-font-feature-settings: "liga=1";
+	color: #333;
+	font-weight: 300;
 	text-rendering: optimizeLegibility;
 	@media print {
 		text-rendering:geometricPrecision;
@@ -172,19 +174,23 @@ a {
 		}
 	// Quote
 	blockquote {
-		font-style:italic;
+		font-style:normal;
 		&:before {
 			position:absolute;
-			margin:-49px 0 0 -100px;
-			color:#DDD;
-			content:'\201C';
+			margin:-.166666667em 0 0 -.333em;
+			color: inherit;
+			content:'“';
 			line-height:1;
-			font-size:200px;
+			font-size:3em;
 			}
 		& + figcaption {
+			color: $color;
 			margin:-48px 0 48px;
 			font-style:italic;
 			font-weight:bold;
+			&:before {
+				content: "— "
+			}
 			}
 		}
 	// Lists
@@ -374,7 +380,6 @@ a {
 			strong {
 				font-weight: 700;
 			}
-		}
 		// Quote
 		blockquote {
 			font-style:italic;
@@ -398,6 +403,7 @@ a {
 				font-style:italic;
 				font-weight:bold;
 				}
+			}
 			}
 	// Place
 	.place {
@@ -741,6 +747,10 @@ q {
 		bottom:0;
 		height: 100%;
 	}
+}
+
+.four.columns {
+	columns: 4;
 }
 
 // Print
